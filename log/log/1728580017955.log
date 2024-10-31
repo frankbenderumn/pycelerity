@@ -1,0 +1,163 @@
+Files to be considered for IR
+	./test/data/creation/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table
+		!id:int          -- {}              
+		comment:str      -- {'limit': 100}  
+		priority:int     -- {}              
+Path Index
+	./test/data/creation/case1/a/input/table.json: ['table']       
+Table attrs for table 'table'
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index
+	./test/data/creation/case2/a/input/multiple.json: ['table1', 'table2']
+Table attrs for table 'table1'
+Files to be considered for IR
+	./test/data/creation/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int?         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case3/a/input/optional.json: ['table1']      
+Table attrs for table 'table1'
+Files to be considered for IR
+	./test/data/creation/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int*         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case4/a/input/something.json: ['table1']      
+Table attrs for table 'table1'
+Files to be considered for IR
+	./test/data/creation/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int+         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case5/a/input/something.json: ['table1']      
+Table attrs for table 'table1'
+Files to be considered for IR
+	./test/data/creation/case6/a/input/input.json
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int=alias1   -- {}              
+		name:str=alias2  -- {'limit': 100}  
+		something:int=alias3 -- {}              
+Path Index
+	./test/data/creation/case6/a/input/input.json: ['table1']      
+Table attrs for table 'table1'
+Files to be considered for IR
+	./test/data/creation/case7/a/input/user.json
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+Dependency Graph
+	{'post': 'user'}
+Sorted deps
+	['user', 'post']
+Schema IR
+	user
+		!id:int          -- {}              
+		fname:str        -- {'limit': 50}   
+		lname:str        -- {'limit': 50}   
+		email:str        -- {'limit': 100}  
+		gender:bool      -- {}              
+		bio:str          -- {'limit': 500}  
+	post
+		!id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int=user_id -- {}              
+Path Index
+	./test/data/creation/case7/a/input/user.json: ['user', 'post']
+Table attrs for table 'user'
+Files to be considered for IR
+	./test/data/creation/case8/a/input/polymorphic.json
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	employee
+		!id:int          -- {}              
+		#employable      -- {}              
+	user
+		!id:int          -- {}              
+		gender:bool      -- {}              
+Path Index
+	./test/data/creation/case8/a/input/polymorphic.json: ['user', 'employee']
+Table attrs for table 'employee'
+Files to be considered for IR
+	./test/data/creation/case9/a/input/file2.json
+{'table2': {'!id:int': {}, 'eureka:int': {}}}
+	./test/data/creation/case9/a/input/file1.json
+{'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+{'table2': {'!id:int': {}, 'eureka:int': {}}, 'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		name:str         -- {'limit': 100}  
+		cool:bool        -- {}              
+	table2
+		!id:int          -- {}              
+		eureka:int       -- {}              
+Path Index
+	./test/data/creation/case9/a/input/file2.json: ['table2']      
+	./test/data/creation/case9/a/input/file1.json: ['table1']      
+Table attrs for table 'table1'

@@ -1,0 +1,240 @@
+Files to be considered for IR
+	./data/input/something.json
+{}
+	./data/input/todo.json
+{'todo': {'*id:int': {}, 'name:str': {'limit': 50}, 'completed:bool': {}, '@arson->id:int': {}}}
+	./data/input/new_file.json
+{'wtf': {'*ow:int': {}, 'my:int': {}}}
+	./data/input/portfolios.json
+{'portfolio': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}, 'records:str': {'limit': 500}}}
+	./data/input/user.json
+{'user': {'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}, 'follower': {'*id:int': {}, '@user->id=follower_id:int!': {}, '@user->id=followee_id:int!': {}}, 'post': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}}, 'comment': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}, '@post->id:int!': {}}, 'like': {'*id:int': {}, '@user->id:int!': {}, 'money:str': {'limit': 500}, '#likeable': {}}}
+	./data/input/arson.json
+{'arson': {'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 100}, '@follower->id:int': {}}, 'shite': {'*id:int': {}, 'why:str': {'limit': 100}}}
+{'todo': {'*id:int': {}, 'name:str': {'limit': 50}, 'completed:bool': {}, '@arson->id:int': {}}, 'wtf': {'*ow:int': {}, 'my:int': {}}, 'portfolio': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}, 'records:str': {'limit': 500}}, 'user': {'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}, 'follower': {'*id:int': {}, '@user->id=follower_id:int!': {}, '@user->id=followee_id:int!': {}}, 'post': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}}, 'comment': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}, '@post->id:int!': {}}, 'like': {'*id:int': {}, '@user->id:int!': {}, 'money:str': {'limit': 500}, '#likeable': {}}, 'arson': {'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 100}, '@follower->id:int': {}}, 'shite': {'*id:int': {}, 'why:str': {'limit': 100}}}
+Dependency Graph
+	{'todo': 'arson', 'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user', 'arson': 'portfolio'}
+Sorted deps
+	['user', 'portfolio', 'follower', 'post', 'comment', 'like', 'arson', 'todo']
+Schema IR
+	user
+		*id:int          -- {}              
+		fname:str        -- {'regex': '', 'limit': 32}
+		lname:str        -- {'regex': '', 'limit': 32}
+		email:str!       -- {'regex': 'email', 'limit': 100}
+		gender:bool      -- {}              
+		bio:str          -- {'limit': 300}  
+	portfolio
+		*id:int          -- {}              
+		name:str         -- {'limit': 50}   
+		prio:int         -- {}              
+		completed:bool   -- {}              
+		records:str      -- {'limit': 500}  
+	follower
+		*id:int          -- {}              
+		@user->id=follower_id:int! -- {}              
+		@user->id=followee_id:int! -- {}              
+	post
+		*id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int!   -- {}              
+	comment
+		*id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int!   -- {}              
+		@post->id:int!   -- {}              
+	like
+		*id:int          -- {}              
+		@user->id:int!   -- {}              
+		money:str        -- {'limit': 500}  
+		#likeable        -- {}              
+	arson
+		*id:int          -- {}              
+		@portfolio->id:int -- {}              
+		text:str         -- {'limit': 100}  
+		@follower->id:int -- {}              
+	todo
+		*id:int          -- {}              
+		name:str         -- {'limit': 50}   
+		completed:bool   -- {}              
+		@arson->id:int   -- {}              
+	shite
+		*id:int          -- {}              
+		why:str          -- {'limit': 100}  
+	wtf
+		*ow:int          -- {}              
+		my:int           -- {}              
+Path Index
+	./data/input/something.json     : []              
+	./data/input/todo.json          : ['todo']        
+	./data/input/new_file.json      : ['wtf']         
+	./data/input/portfolios.json    : ['portfolio']   
+	./data/input/user.json          : ['user', 'follower', 'post', 'comment', 'like']
+	./data/input/arson.json         : ['arson', 'shite']
+Table attrs for table 'user'
+	Raw Attr: *id:int
+	Raw Attr: fname:str
+	Raw Attr: lname:str
+	Raw Attr: email:str!
+	Raw Attr: gender:bool
+	Raw Attr: bio:str
+Table attrs for table 'portfolio'
+	Raw Attr: *id:int
+	Raw Attr: name:str
+	Raw Attr: prio:int
+	Raw Attr: completed:bool
+	Raw Attr: records:str
+Table attrs for table 'follower'
+	Raw Attr: *id:int
+	Raw Attr: @user->id=follower_id:int!
+	Raw Attr: @user->id=followee_id:int!
+Table attrs for table 'post'
+	Raw Attr: *id:int
+	Raw Attr: content:str
+	Raw Attr: @user->id:int!
+Table attrs for table 'comment'
+	Raw Attr: *id:int
+	Raw Attr: content:str
+	Raw Attr: @user->id:int!
+	Raw Attr: @post->id:int!
+Table attrs for table 'like'
+	Raw Attr: *id:int
+	Raw Attr: @user->id:int!
+	Raw Attr: money:str
+	Raw Attr: #likeable
+Table attrs for table 'arson'
+	Raw Attr: *id:int
+	Raw Attr: @portfolio->id:int
+	Raw Attr: text:str
+	Raw Attr: @follower->id:int
+Table attrs for table 'todo'
+	Raw Attr: *id:int
+	Raw Attr: name:str
+	Raw Attr: completed:bool
+	Raw Attr: @arson->id:int
+Table attrs for table 'shite'
+	Raw Attr: *id:int
+	Raw Attr: why:str
+Table attrs for table 'wtf'
+	Raw Attr: *ow:int
+	Raw Attr: my:int
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "user" (
+	id SERIAL PRIMARY KEY,
+	fname VARCHAR(32) NOT NULL,
+	lname VARCHAR(32) NOT NULL,
+	email VARCHAR(100) NOT NULL CHECK (email ~* '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'),
+	gender BOOLEAN NOT NULL,
+	bio VARCHAR(300) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "portfolio" (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	prio INTEGER NOT NULL,
+	completed BOOLEAN NOT NULL,
+	records VARCHAR(500) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "follower" (
+	id SERIAL PRIMARY KEY,
+	follower_id INTEGER NOT NULL,
+	followee_id INTEGER NOT NULL,
+	FOREIGN KEY (follower_id) REFERENCES "user"(id) ON DELETE CASCADE,
+	FOREIGN KEY (followee_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "post" (
+	id SERIAL PRIMARY KEY,
+	content VARCHAR(300) NOT NULL,
+	user_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "comment" (
+	id SERIAL PRIMARY KEY,
+	content VARCHAR(300) NOT NULL,
+	user_id INTEGER NOT NULL,
+	post_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE,
+	FOREIGN KEY (post_id) REFERENCES "post"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "like" (
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER NOT NULL,
+	money VARCHAR(500) NOT NULL,
+	likeable_type VARCHAR(50) NOT NULL,
+	likeable_id INTEGER NOT NULL,
+	UNIQUE (likeable_id, likeable_type),
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "arson" (
+	id SERIAL PRIMARY KEY,
+	portfolio_id INTEGER NOT NULL,
+	text VARCHAR(100) NOT NULL,
+	follower_id INTEGER NOT NULL,
+	FOREIGN KEY (portfolio_id) REFERENCES "portfolio"(id) ON DELETE CASCADE,
+	FOREIGN KEY (follower_id) REFERENCES "follower"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "todo" (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	completed BOOLEAN NOT NULL,
+	arson_id INTEGER NOT NULL,
+	FOREIGN KEY (arson_id) REFERENCES "arson"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "shite" (
+	id SERIAL PRIMARY KEY,
+	why VARCHAR(100) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "wtf" (
+	ow SERIAL PRIMARY KEY,
+	my INTEGER NOT NULL
+);
+
+Old schools
+	['user', 'portfolio', 'follower', 'post', 'comment', 'like', 'arson', 'todo', 'okay', 'wtf']
+New Schools
+	['user', 'portfolio', 'follower', 'post', 'comment', 'like', 'arson', 'todo', 'shite', 'wtf']
+Creation detected
+	['shite']
+Table attrs for table 'shite'
+	Raw Attr: *id:int
+	Raw Attr: why:str
+Delta Creation
+CREATE TABLE IF NOT EXISTS "shite" (
+	id SERIAL PRIMARY KEY,
+	why VARCHAR(100) NOT NULL
+);
+
+Deletion detected
+	['okay']
+Delta Deletion
+DROP TABLE IF EXISTS "okay"; 
+No move detected
+Updation Detected on school 'arson'
+	Old school
+		{'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 50}, '@follower->id:int': {}}
+	New school
+		{'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 100}, '@follower->id:int': {}}
+*id:int
+	Raw Attr: *id:int
+@portfolio->id:int
+	Raw Attr: @portfolio->id:int
+text:str
+	Raw Attr: text:str
+@follower->id:int
+	Raw Attr: @follower->id:int
+{'id': <celerity.transpiler.attr.Attr object at 0x101b69ac0>, 'portfolio': <celerity.transpiler.attr.Attr object at 0x101b69b20>, 'text': <celerity.transpiler.attr.Attr object at 0x101b69be0>, 'follower': <celerity.transpiler.attr.Attr object at 0x101b69c70>}
+	Raw Attr: *id:int
+	Raw Attr: @portfolio->id:int
+	Raw Attr: text:str
+	Raw Attr: @follower->id:int
+	Created Keys
+		[]
+	Deleted Keys
+		[]
+	Old Validations
+		{'limit': 100}
+	New Validations
+		{'limit': 50}
+	Validation Alteration
+		Validation 'limit' updated from '100' to '50'
+str
+	Raw Attr: text

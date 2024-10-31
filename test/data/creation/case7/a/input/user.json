@@ -1,0 +1,15 @@
+{
+	"user": {
+		"!id:int": {},
+		"fname:str": {"limit": 50},
+		"lname:str": {"limit": 50},
+		"email:str": {"limit": 100},
+		"gender:bool": {},
+		"bio:str": {"limit": 500}
+	},
+	"post": {
+		"!id:int": {},
+		"content:str": {"limit": 300},
+		"@user->id:int=user_id": {}
+	}
+}

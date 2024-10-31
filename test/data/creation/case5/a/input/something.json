@@ -1,0 +1,9 @@
+{
+	"table1": {
+		"!id:int": {},
+		"opt:int+": {},
+		"string:str": {
+			"limit": 100
+		}
+	}
+}

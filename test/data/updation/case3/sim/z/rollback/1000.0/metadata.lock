@@ -1,0 +1,53 @@
+{
+    "id": "1000.0",
+    "path_index": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json": [
+            "table1",
+            "table2",
+            "table3",
+            "table4",
+            "table5",
+            "table6"
+        ]
+    },
+    "checksums": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json": "873eccd611054bbe72dd60fdf90b8a99be7483cb659723f816a6a5b81d0007ee"
+    },
+    "schools": [
+        "table1",
+        "table2",
+        "table3",
+        "table4",
+        "table5",
+        "table6"
+    ],
+    "history": [],
+    "school_index": {
+        "table1": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json"
+        ],
+        "table2": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json"
+        ],
+        "table3": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json"
+        ],
+        "table4": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json"
+        ],
+        "table5": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json"
+        ],
+        "table6": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json"
+        ]
+    },
+    "school_checksums": {
+        "table1": "15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a",
+        "table2": "15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a",
+        "table3": "15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a",
+        "table4": "15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a",
+        "table5": "15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a",
+        "table6": "15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a"
+    }
+}

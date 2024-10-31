@@ -1,0 +1,1082 @@
+Mock Timestamp
+1002.0
+Mock Timestamp
+1003.0
+Files to be considered for IR
+	./test/data/creation/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: comment:str
+		Fish Info
+		==================================================
+		Fish Name              : comment
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: priority:int
+		Fish Info
+		==================================================
+		Fish Name              : priority
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table
+		!id:int          -- {}              
+		comment:str      -- {'limit': 100}  
+		priority:int     -- {}              
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x10399b260>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case1/a/input/', 'output': './test/data/creation/case1/a/output/', 'rollback': './test/data/creation/case1/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1004.0
+Mock Timestamp
+1005.0
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gate:bool
+		Fish Info
+		==================================================
+		Fish Name              : gate
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: effective:int
+		Fish Info
+		==================================================
+		Fish Name              : effective
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gate:bool
+		Fish Info
+		==================================================
+		Fish Name              : gate
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: prio:int
+		Fish Info
+		==================================================
+		Fish Name              : prio
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1024e4d40>}
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103d50290>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case2/a/input/', 'output': './test/data/creation/case2/a/output/', 'rollback': './test/data/creation/case2/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1006.0
+Mock Timestamp
+1007.0
+Files to be considered for IR
+	./test/data/creation/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: opt:int?
+		Fish Info
+		==================================================
+		Fish Name              : opt
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : optional
+		Fish Alias             : 
+	Raw Fish: string:str
+		Fish Info
+		==================================================
+		Fish Name              : string
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int?         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+optional
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103998f20>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case3/a/input/', 'output': './test/data/creation/case3/a/output/', 'rollback': './test/data/creation/case3/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1008.0
+Mock Timestamp
+1009.0
+Files to be considered for IR
+	./test/data/creation/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: opt:int*
+		Fish Info
+		==================================================
+		Fish Name              : opt
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : unique
+		Fish Alias             : 
+	Raw Fish: string:str
+		Fish Info
+		==================================================
+		Fish Name              : string
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int*         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+unique
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x10397ae40>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case4/a/input/', 'output': './test/data/creation/case4/a/output/', 'rollback': './test/data/creation/case4/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1010.0
+Mock Timestamp
+1011.0
+Files to be considered for IR
+	./test/data/creation/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: opt:int+
+		Fish Info
+		==================================================
+		Fish Name              : opt
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : reqopt
+		Fish Alias             : 
+	Raw Fish: string:str
+		Fish Info
+		==================================================
+		Fish Name              : string
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int+         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+reqopt
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103d650a0>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case5/a/input/', 'output': './test/data/creation/case5/a/output/', 'rollback': './test/data/creation/case5/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1012.0
+Mock Timestamp
+1013.0
+Files to be considered for IR
+	./test/data/creation/case6/a/input/input.json
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int=alias1
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : alias
+		Fish Alias             : alias1
+	Raw Fish: name:str=alias2
+		Fish Info
+		==================================================
+		Fish Name              : name
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : alias
+		Fish Alias             : alias2
+	Raw Fish: something:int=alias3
+		Fish Info
+		==================================================
+		Fish Name              : something
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : alias
+		Fish Alias             : alias3
+Schema IR
+	table1
+		!id:int=alias1   -- {}              
+		name:str=alias2  -- {'limit': 100}  
+		something:int=alias3 -- {}              
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+alias
+ATTR SPECIAL
+alias
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103d142f0>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	alias2 VARCHAR(100) NOT NULL,
+	alias3 INTEGER NOT NULL,
+	alias1 SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case6/a/input/', 'output': './test/data/creation/case6/a/output/', 'rollback': './test/data/creation/case6/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	alias2 VARCHAR(100) NOT NULL,
+	alias3 INTEGER NOT NULL,
+	alias1 SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1014.0
+Mock Timestamp
+1015.0
+Files to be considered for IR
+	./test/data/creation/case7/a/input/user.json
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+Dependency Graph
+	{'post': 'user'}
+Sorted deps
+	['user', 'post']
+School fishs for school 'user'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: fname:str
+		Fish Info
+		==================================================
+		Fish Name              : fname
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: lname:str
+		Fish Info
+		==================================================
+		Fish Name              : lname
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: email:str
+		Fish Info
+		==================================================
+		Fish Name              : email
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gender:bool
+		Fish Info
+		==================================================
+		Fish Name              : gender
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: bio:str
+		Fish Info
+		==================================================
+		Fish Name              : bio
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'post'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: content:str
+		Fish Info
+		==================================================
+		Fish Name              : content
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: @user->id:int=user_id
+		Fish Info
+		==================================================
+		Fish Name              : user
+		Fish Type              : int
+		Fish School Constraint : fk
+		Fish Reference         : id
+		Fish Special           : alias
+		Fish Alias             : user_id
+Schema IR
+	user
+		!id:int          -- {}              
+		fname:str        -- {'limit': 50}   
+		lname:str        -- {'limit': 50}   
+		email:str        -- {'limit': 100}  
+		gender:bool      -- {}              
+		bio:str          -- {'limit': 500}  
+	post
+		!id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int=user_id -- {}              
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1028aa480>}
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103936e10>, 'fk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103937f80>}
+ATTR SPECIAL
+alias
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "user" (
+	fname VARCHAR(50) NOT NULL,
+	lname VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	gender BOOLEAN NOT NULL,
+	bio VARCHAR(500) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "post" (
+	content VARCHAR(300) NOT NULL,
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case7/a/input/', 'output': './test/data/creation/case7/a/output/', 'rollback': './test/data/creation/case7/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "user" (
+	fname VARCHAR(50) NOT NULL,
+	lname VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	gender BOOLEAN NOT NULL,
+	bio VARCHAR(500) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "post" (
+	content VARCHAR(300) NOT NULL,
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+
+Mock Timestamp
+1016.0
+Mock Timestamp
+1017.0
+Files to be considered for IR
+	./test/data/creation/case8/a/input/polymorphic.json
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'employee'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: #employable
+		Fish Info
+		==================================================
+		Fish Name              : employable
+		Fish Type              : 
+		Fish School Constraint : poly
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'user'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gender:bool
+		Fish Info
+		==================================================
+		Fish Name              : gender
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	employee
+		!id:int          -- {}              
+		#employable      -- {}              
+	user
+		!id:int          -- {}              
+		gender:bool      -- {}              
+Path Index: TODO ocean.dump()
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103d53f50>, 'poly': <celerity.ir.school_constraint.SchoolConstraint object at 0x103d51eb0>}
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103d51940>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "employee" (
+	id SERIAL PRIMARY KEY,
+	employable_type VARCHAR(50) NOT NULL,
+	employable_id INTEGER NOT NULL,
+	UNIQUE (employable_id, employable_type)
+);
+CREATE TABLE IF NOT EXISTS "user" (
+	gender BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case8/a/input/', 'output': './test/data/creation/case8/a/output/', 'rollback': './test/data/creation/case8/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "employee" (
+	id SERIAL PRIMARY KEY,
+	employable_type VARCHAR(50) NOT NULL,
+	employable_id INTEGER NOT NULL,
+	UNIQUE (employable_id, employable_type)
+);
+CREATE TABLE IF NOT EXISTS "user" (
+	gender BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1018.0
+Mock Timestamp
+1019.0
+Files to be considered for IR
+	./test/data/creation/case9/a/input/file2.json
+{'table2': {'!id:int': {}, 'eureka:int': {}}}
+	./test/data/creation/case9/a/input/file1.json
+{'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+{'table2': {'!id:int': {}, 'eureka:int': {}}, 'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: name:str
+		Fish Info
+		==================================================
+		Fish Name              : name
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: cool:bool
+		Fish Info
+		==================================================
+		Fish Name              : cool
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: eureka:int
+		Fish Info
+		==================================================
+		Fish Name              : eureka
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+		name:str         -- {'limit': 100}  
+		cool:bool        -- {}              
+	table2
+		!id:int          -- {}              
+		eureka:int       -- {}              
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103998c20>}
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103998110>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	cool BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	eureka INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case9/a/input/', 'output': './test/data/creation/case9/a/output/', 'rollback': './test/data/creation/case9/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	cool BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	eureka INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1020.0
+Mock Timestamp
+1021.0
+Files to be considered for IR
+	./test/data/creation/case10/a/input/validations.json
+{'validations': {'!id:int': {}, 'name:str*': {'limit': 100, 'default': 'hello'}, 'name2:int*': {'default': 10}, 'email:str*': {'limit': 500, 'regex': 'email'}, 'nullable:bool?': {}}}
+{'validations': {'!id:int': {}, 'name:str*': {'limit': 100, 'default': 'hello'}, 'name2:int*': {'default': 10}, 'email:str*': {'limit': 500, 'regex': 'email'}, 'nullable:bool?': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'validations'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: name:str*
+		Fish Info
+		==================================================
+		Fish Name              : name
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : unique
+		Fish Alias             : 
+	Raw Fish: name2:int*
+		Fish Info
+		==================================================
+		Fish Name              : name2
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : unique
+		Fish Alias             : 
+	Raw Fish: email:str*
+		Fish Info
+		==================================================
+		Fish Name              : email
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : unique
+		Fish Alias             : 
+	Raw Fish: nullable:bool?
+		Fish Info
+		==================================================
+		Fish Name              : nullable
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : optional
+		Fish Alias             : 
+Schema IR
+	validations
+		!id:int          -- {}              
+		name:str*        -- {'limit': 100, 'default': 'hello'}
+		name2:int*       -- {'default': 10} 
+		email:str*       -- {'limit': 500, 'regex': 'email'}
+		nullable:bool?   -- {}              
+Path Index: TODO ocean.dump()
+ATTR SPECIAL
+unique
+ATTR SPECIAL
+unique
+ATTR SPECIAL
+unique
+ATTR SPECIAL
+optional
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x10399a690>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "validations" (
+	name VARCHAR(100) UNIQUE NOT NULL DEFAULT 'hello',
+	name2 INTEGER UNIQUE NOT NULL DEFAULT 10,
+	email VARCHAR(500) UNIQUE NOT NULL,
+	CHECK (email ~* '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z|A-Z]{2,}$'),
+	nullable BOOLEAN NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case10/a/input/', 'output': './test/data/creation/case10/a/output/', 'rollback': './test/data/creation/case10/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "validations" (
+	name VARCHAR(100) UNIQUE NOT NULL DEFAULT 'hello',
+	name2 INTEGER UNIQUE NOT NULL DEFAULT 10,
+	email VARCHAR(500) UNIQUE NOT NULL,
+	CHECK (email ~* '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z|A-Z]{2,}$'),
+	nullable BOOLEAN NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Mock Timestamp
+1000.0
+Mock Timestamp
+1001.0
+Files to be considered for IR
+{}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+Path Index: TODO ocean.dump()
+Serialized Congregation
+===========================================
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case2/sim/a/input/', 'output': './test/data/updation/case2/sim/a/output/', 'rollback': './test/data/updation/case2/sim/a/rollback/'}
+old schema
+
+Mock Timestamp
+1000.0
+Mock Timestamp
+1001.0
+Files to be considered for IR
+	./test/data/updation/case3/sim/a/input/schools.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table5'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table6'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+	table3
+		!id:int          -- {}              
+	table4
+		!id:int          -- {}              
+	table5
+		!id:int          -- {}              
+	table6
+		!id:int          -- {}              
+Path Index: TODO ocean.dump()
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103936ff0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1039370b0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103935d90>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1039378f0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103936930>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x103936b40>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/sim/a/input/', 'output': './test/data/updation/case3/sim/a/output/', 'rollback': './test/data/updation/case3/sim/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+

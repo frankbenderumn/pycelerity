@@ -1,0 +1,7 @@
+{
+	"table1": {
+		"!id:int=alias1": {},
+		"name:str=alias2": {"limit": 100},
+		"something:int=alias3": {}
+	}
+}

@@ -1,0 +1,23 @@
+{
+    "id": "1730221307575.594",
+    "path_index": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/demo/input/input.json": [
+            "user"
+        ]
+    },
+    "checksums": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/demo/input/input.json": "485807b6ccc366c581a53893807257764db82263b0a842e0b76d5b6fa51ba857"
+    },
+    "schools": [
+        "user"
+    ],
+    "history": [],
+    "school_index": {
+        "user": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/demo/input/input.json"
+        ]
+    },
+    "school_checksums": {
+        "user": "0746322354add83e0592df39655de8371520f1d3e9fc2beae0423d97c460cd94"
+    }
+}

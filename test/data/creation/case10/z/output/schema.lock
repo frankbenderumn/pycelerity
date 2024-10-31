@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS "validations" (
+	name VARCHAR(100) UNIQUE NOT NULL DEFAULT 'hello',
+	name2 INTEGER UNIQUE NOT NULL DEFAULT 10,
+	email VARCHAR(500) UNIQUE NOT NULL,
+	CHECK (email ~* '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z|A-Z]{2,}$'),
+	nullable BOOLEAN NULL,
+	id SERIAL PRIMARY KEY
+);

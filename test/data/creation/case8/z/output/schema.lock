@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS "employee" (
+	id SERIAL PRIMARY KEY,
+	employable_type VARCHAR(50) NOT NULL,
+	employable_id INTEGER NOT NULL,
+	UNIQUE (employable_id, employable_type)
+);
+CREATE TABLE IF NOT EXISTS "user" (
+	gender BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);

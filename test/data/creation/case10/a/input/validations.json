@@ -1,0 +1,9 @@
+{
+	"validations": {
+		"!id:int": {},
+		"name:str*": {"limit": 100, "default": "hello"},
+		"name2:int*": {"default": 10},
+		"email:str*": {"limit": 500, "regex": "email"},
+		"nullable:bool?": {}
+	}
+}

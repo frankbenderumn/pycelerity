@@ -1,0 +1,16 @@
+{
+	"table1": {
+		"!id:int": {},
+		"welcome:str": {
+			"limit": 500
+		},
+		"food:int": {}
+	},
+	"table2": {
+		"!id:int": {},
+		"welcome2:str": {
+			"limit": 500
+		},
+		"fuck:int": {"default": 3}
+	}
+}

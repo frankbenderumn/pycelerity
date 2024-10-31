@@ -1,0 +1,8 @@
+{
+	"wtf": {
+		"*ow:int": {},
+		"my:int": {},
+		"on:int": {},
+		"why:str": {"limit": 100}
+	}
+}

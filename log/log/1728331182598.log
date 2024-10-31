@@ -1,0 +1,12 @@
+Files to be considered for IR
+	./data/input/todo.json
+	./data/input/new_file.json
+	./data/input/portfolios.json
+	./data/input/user.json
+	./data/input/arson.json
+Dependency Graph
+{'todo': 'arson', 'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user', 'arson': 'portfolio'}
+TABLE ATTRS
+{'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}
+*id:int
+fname:str

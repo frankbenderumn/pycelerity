@@ -1,0 +1,23 @@
+{
+	"table1": {
+		"!id:int": {},
+		"welcome:str": {
+			"limit": 500
+		},
+		"food:int": {}
+	},
+	"table2": {
+		"!id:int": {},
+		"welcome2:str": {
+			"limit": 500
+		},
+		"fuck:int": {
+			"default": 3
+		}
+	},
+	"table3": {
+		"!id:int": {},
+		"@table2->id:int=alias": {},
+		"here:str": {"limit": 100}
+	}
+}

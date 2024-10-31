@@ -1,0 +1,103 @@
+[]
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./data/demo/input/input.json
+{'user': {'!id:int': {}, 'fname:str': {'limit': 100}, 'lname:str': {'limit': 100}, 'email:str': {'limit': 200, 'regex': 'email'}, 'password_digest:str': {'limit': 256}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'user'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: fname:str
+		Fish Info
+		==================================================
+		Fish Name              : fname
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: lname:str
+		Fish Info
+		==================================================
+		Fish Name              : lname
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: email:str
+		Fish Info
+		==================================================
+		Fish Name              : email
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: password_digest:str
+		Fish Info
+		==================================================
+		Fish Name              : password_digest
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+{'user': {'!id:int': {}, 'fname:str': {'limit': 100}, 'lname:str': {'limit': 100}, 'email:str': {'limit': 200, 'regex': 'email'}, 'password_digest:str': {'limit': 256}}}
+{'user': '0746322354add83e0592df39655de8371520f1d3e9fc2beae0423d97c460cd94'}
+Schema IR
+	user
+		!id:int          -- {}              
+		fname:str        -- {'limit': 100}  
+		lname:str        -- {'limit': 100}  
+		email:str        -- {'limit': 200, 'regex': 'email'}
+		password_digest:str -- {'limit': 256}  
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1031238c0>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "user" (
+	fname VARCHAR(100) NOT NULL,
+	lname VARCHAR(100) NOT NULL,
+	email VARCHAR(200) NOT NULL,
+	CHECK (email ~* '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z|A-Z]{2,}$'),
+	password_digest VARCHAR(256) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+
+PERSIST DIRECTORIES
+{'input': './data/demo/input/', 'output': './data/demo/output/', 'rollback': './data/demo/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "user" (
+	fname VARCHAR(100) NOT NULL,
+	lname VARCHAR(100) NOT NULL,
+	email VARCHAR(200) NOT NULL,
+	CHECK (email ~* '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-z|A-Z]{2,}$'),
+	password_digest VARCHAR(256) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': '1730221307575.594', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/data/demo/input/input.json': ['user']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/data/demo/input/input.json': '485807b6ccc366c581a53893807257764db82263b0a842e0b76d5b6fa51ba857'}, 'schools': ['user'], 'history': [], 'school_index': {'user': ['/Users/josephbender/Desktop/programming/python/pycelerity/data/demo/input/input.json']}, 'school_checksums': {'user': '0746322354add83e0592df39655de8371520f1d3e9fc2beae0423d97c460cd94'}}
+DELTA CHANGE DETECTED
+Error occurred while copying directory
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================

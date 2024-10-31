@@ -1,0 +1,542 @@
+Files to be considered for IR
+	./test/data/creation/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int
+	Raw Fish: comment:str
+	Raw Fish: priority:int
+Schema IR
+	table
+		!id:int          -- {}              
+		comment:str      -- {'limit': 100}  
+		priority:int     -- {}              
+Path Index
+	./test/data/creation/case1/a/input/table.json: ['table']       
+School fishs for school 'table'
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x10621ed80>}
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x10621f5c0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x10621f5c0>>
+{'id': '1728606827038.732', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json': ['table']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json': 'aacbba7f6659fc3ea4379903ff1e449ce13c25e64dad8e9bc613aa41c75a5edd'}, 'schools': ['table'], 'history': ['./test/data/creation/case1/a/rollback/1728606827038.732'], 'school_index': {'table': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json']}}
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int
+	Raw Fish: gate:bool
+	Raw Fish: effective:int
+	Raw Fish: !id:int
+	Raw Fish: gate:bool
+	Raw Fish: prio:int
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index
+	./test/data/creation/case2/a/input/multiple.json: ['table1', 'table2']
+School fishs for school 'table1'
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x10621deb0>}
+School fishs for school 'table2'
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x1061e9e80>}
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x10621f890>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x10621f890>>
+{'id': '1728606827044.095', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': ['table1', 'table2']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': 'ff543c904e2ad60c907b7b9c1bc42a921be0593f54048842a15feb9d8a935d65'}, 'schools': ['table1', 'table2'], 'history': ['./test/data/creation/case2/a/rollback/1728606827044.095'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json']}}
+Files to be considered for IR
+	./test/data/creation/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int
+	Raw Fish: opt:int?
+	Raw Fish: string:str
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int?         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case3/a/input/optional.json: ['table1']      
+School fishs for school 'table1'
+ATTR SPECIAL
+optional
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x10621ff80>}
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x1061eb2f0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x1061eb2f0>>
+{'id': '1728606827049.134', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json': '1ae8f60dd8dc0c63ad4965c58ba44b4ed49d927ed2b859323318283669cb1151'}, 'schools': ['table1'], 'history': ['./test/data/creation/case3/a/rollback/1728606827049.134'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json']}}
+Files to be considered for IR
+	./test/data/creation/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int
+	Raw Fish: opt:int*
+	Raw Fish: string:str
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int*         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case4/a/input/something.json: ['table1']      
+School fishs for school 'table1'
+ATTR SPECIAL
+unique
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x10621e180>}
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x1061eb410>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x1061eb410>>
+{'id': '1728606827054.564', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json': '818865fa9d3df9f9706573a42b183325bd30fe5897f87b6ba25da16e8df85dff'}, 'schools': ['table1'], 'history': ['./test/data/creation/case4/a/rollback/1728606827054.564'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json']}}
+Files to be considered for IR
+	./test/data/creation/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int
+	Raw Fish: opt:int+
+	Raw Fish: string:str
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int+         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case5/a/input/something.json: ['table1']      
+School fishs for school 'table1'
+ATTR SPECIAL
+reqopt
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x1062614c0>}
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x106261850>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x106261850>>
+{'id': '1728606827072.8582', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json': '1729065ae144d74d0ff9fd6857f5cfe92cc245e6f5032a6d76483b6a5e67adbb'}, 'schools': ['table1'], 'history': ['./test/data/creation/case5/a/rollback/1728606827072.8582'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json']}}
+Files to be considered for IR
+	./test/data/creation/case6/a/input/input.json
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int=alias1
+	Raw Fish: name:str=alias2
+	Raw Fish: something:int=alias3
+Schema IR
+	table1
+		!id:int=alias1   -- {}              
+		name:str=alias2  -- {'limit': 100}  
+		something:int=alias3 -- {}              
+Path Index
+	./test/data/creation/case6/a/input/input.json: ['table1']      
+School fishs for school 'table1'
+ATTR SPECIAL
+alias
+ATTR SPECIAL
+alias
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x106261850>}
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "table1" (
+	alias2 VARCHAR(100) NOT NULL,
+	alias3 INTEGER NOT NULL,
+	alias1 SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	alias2 VARCHAR(100) NOT NULL,
+	alias3 INTEGER NOT NULL,
+	alias1 SERIAL PRIMARY KEY
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	alias2 VARCHAR(100) NOT NULL,
+	alias3 INTEGER NOT NULL,
+	alias1 SERIAL PRIMARY KEY
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x106261be0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x106261be0>>
+{'id': '1728606827078.379', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case6/a/input/input.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case6/a/input/input.json': 'd8caa444de6ad3c032a67da233075d4b22e4f1e20d18577db6f00407001a513a'}, 'schools': ['table1'], 'history': ['./test/data/creation/case6/a/rollback/1728606827078.379'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case6/a/input/input.json']}}
+Files to be considered for IR
+	./test/data/creation/case7/a/input/user.json
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+Dependency Graph
+	{'post': 'user'}
+Sorted deps
+	['user', 'post']
+	Raw Fish: !id:int
+	Raw Fish: fname:str
+	Raw Fish: lname:str
+	Raw Fish: email:str
+	Raw Fish: gender:bool
+	Raw Fish: bio:str
+	Raw Fish: !id:int
+	Raw Fish: content:str
+	Raw Fish: @user->id:int=user_id
+Schema IR
+	user
+		!id:int          -- {}              
+		fname:str        -- {'limit': 50}   
+		lname:str        -- {'limit': 50}   
+		email:str        -- {'limit': 100}  
+		gender:bool      -- {}              
+		bio:str          -- {'limit': 500}  
+	post
+		!id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int=user_id -- {}              
+Path Index
+	./test/data/creation/case7/a/input/user.json: ['user', 'post']
+School fishs for school 'user'
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x106261cd0>}
+School fishs for school 'post'
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x106412600>, 'fk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x106411f10>}
+ATTR SPECIAL
+alias
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "user" (
+	fname VARCHAR(50) NOT NULL,
+	lname VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	gender BOOLEAN NOT NULL,
+	bio VARCHAR(500) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "post" (
+	content VARCHAR(300) NOT NULL,
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER	user_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "user" (
+	fname VARCHAR(50) NOT NULL,
+	lname VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	gender BOOLEAN NOT NULL,
+	bio VARCHAR(500) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "post" (
+	content VARCHAR(300) NOT NULL,
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER	user_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "user" (
+	fname VARCHAR(50) NOT NULL,
+	lname VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	gender BOOLEAN NOT NULL,
+	bio VARCHAR(500) NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "post" (
+	content VARCHAR(300) NOT NULL,
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER	user_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x1062604a0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x1062604a0>>
+{'id': '1728606827084.3047', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json': ['user', 'post']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json': '78deee19834e4f943eb2fabb1319a4fc85e00d28ad5415dc6eceae2e3ccc1dab'}, 'schools': ['user', 'post'], 'history': ['./test/data/creation/case7/a/rollback/1728606827084.3047'], 'school_index': {'user': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json'], 'post': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json']}}
+Files to be considered for IR
+	./test/data/creation/case8/a/input/polymorphic.json
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int
+	Raw Fish: #employable
+	Raw Fish: !id:int
+	Raw Fish: gender:bool
+Schema IR
+	employee
+		!id:int          -- {}              
+		#employable      -- {}              
+	user
+		!id:int          -- {}              
+		gender:bool      -- {}              
+Path Index
+	./test/data/creation/case8/a/input/polymorphic.json: ['user', 'employee']
+School fishs for school 'employee'
+Files to be considered for IR
+	./test/data/creation/case9/a/input/file2.json
+{'table2': {'!id:int': {}, 'eureka:int': {}}}
+	./test/data/creation/case9/a/input/file1.json
+{'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+{'table2': {'!id:int': {}, 'eureka:int': {}}, 'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+	Raw Fish: !id:int
+	Raw Fish: name:str
+	Raw Fish: cool:bool
+	Raw Fish: !id:int
+	Raw Fish: eureka:int
+Schema IR
+	table1
+		!id:int          -- {}              
+		name:str         -- {'limit': 100}  
+		cool:bool        -- {}              
+	table2
+		!id:int          -- {}              
+		eureka:int       -- {}              
+Path Index
+	./test/data/creation/case9/a/input/file2.json: ['table2']      
+	./test/data/creation/case9/a/input/file1.json: ['table1']      
+School fishs for school 'table1'
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x10621e120>}
+School fishs for school 'table2'
+ATTR SPECIAL
+
+{'pk': <celerity.transpiler.school_constraint.SchoolConstraint object at 0x10621d010>}
+LETS GO ===============================
+
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	cool BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	eureka INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	cool BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	eureka INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	cool BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	eureka INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+<celerity.transpiler.ocean.Ocean object at 0x106413800>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x106413800>>
+{'id': '1728606827108.069', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file2.json': ['table2'], '/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file1.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file2.json': '40e7ed1e4dee546830a34fa85965342f40193b3c36ab8426dcda1bf99b22c540', '/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file1.json': '0a6b3eac26f5533f6bdaf4654dd7f085607ac42ed034cc7e16addcd0bd0bd1a8'}, 'schools': ['table1', 'table2'], 'history': ['./test/data/creation/case9/a/rollback/1728606827108.069'], 'school_index': {'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file2.json'], 'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file1.json']}}

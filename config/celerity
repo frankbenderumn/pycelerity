@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export DB_NAME="demo"
+export DB_USER="gumdrop"
+export DB_PASSWORD="luvugum101"
+export DB_HOST="127.0.0.1"
+export DB_PORT="5432"
+export DB_SCHEMA="./data/output/"
+export DB_MIGRATION="./data/input/"
+
+export CELERITY_CONSOLE="true"
+export CELERITY_DB_TYPE="psql"
+export CELERITY_LOG="./log/celerity/"
+export CELERITY_DELTA_DIR="./data/delta/"
+export CELERITY_ROLLBACK_DIR="./data/rollback/"
+export CELERITY_ENV="test"

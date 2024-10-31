@@ -1,0 +1,327 @@
+Files to be considered for IR
+	./test/data/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table
+		!id:int          -- {}              
+		comment:str      -- {'limit': 100}  
+		priority:int     -- {}              
+Path Index
+	./test/data/case1/a/input/table.json: ['table']       
+Table attrs for table 'table'
+	Raw Attr: !id:int
+	Raw Attr: comment:str
+ATTR SPECIAL
+
+	Raw Attr: priority:int
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table" (
+	id SERIAL PRIMARY KEY,
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table" (
+	id SERIAL PRIMARY KEY,
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x103d9f0e0>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103d9f0e0>>
+{'id': '1728569202913.923', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case1/a/input/table.json': ['table']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case1/a/input/table.json': 'aacbba7f6659fc3ea4379903ff1e449ce13c25e64dad8e9bc613aa41c75a5edd'}, 'schools': ['table'], 'history': ['./test/data/case1/a/rollback/1728569202913.923'], 'school_index': {'table': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case1/a/input/table.json']}}
+Files to be considered for IR
+	./test/data/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index
+	./test/data/case2/a/input/multiple.json: ['table1', 'table2']
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: gate:bool
+ATTR SPECIAL
+
+	Raw Attr: effective:int
+ATTR SPECIAL
+
+Table attrs for table 'table2'
+	Raw Attr: !id:int
+	Raw Attr: gate:bool
+ATTR SPECIAL
+
+	Raw Attr: prio:int
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x103d9ee10>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103d9ee10>>
+{'id': '1728569202918.203', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case2/a/input/multiple.json': ['table1', 'table2']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case2/a/input/multiple.json': 'ff543c904e2ad60c907b7b9c1bc42a921be0593f54048842a15feb9d8a935d65'}, 'schools': ['table1', 'table2'], 'history': ['./test/data/case2/a/rollback/1728569202918.203'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case2/a/input/multiple.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case2/a/input/multiple.json']}}
+Files to be considered for IR
+	./test/data/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int?         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/case3/a/input/optional.json: ['table1']      
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: opt:int?
+ATTR SPECIAL
+optional
+	Raw Attr: string:str
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x103d9ec00>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103d9ec00>>
+{'id': '1728569202923.0889', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case3/a/input/optional.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case3/a/input/optional.json': '1ae8f60dd8dc0c63ad4965c58ba44b4ed49d927ed2b859323318283669cb1151'}, 'schools': ['table1'], 'history': ['./test/data/case3/a/rollback/1728569202923.0889'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case3/a/input/optional.json']}}
+Files to be considered for IR
+	./test/data/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int*         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/case4/a/input/something.json: ['table1']      
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: opt:int*
+ATTR SPECIAL
+unique
+	Raw Attr: string:str
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x103d9ee10>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103d9ee10>>
+{'id': '1728569202927.194', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case4/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case4/a/input/something.json': '818865fa9d3df9f9706573a42b183325bd30fe5897f87b6ba25da16e8df85dff'}, 'schools': ['table1'], 'history': ['./test/data/case4/a/rollback/1728569202927.194'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case4/a/input/something.json']}}
+Files to be considered for IR
+	./test/data/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int+         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/case5/a/input/something.json: ['table1']      
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: opt:int+
+ATTR SPECIAL
+reqopt
+	Raw Attr: string:str
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x103d9fd70>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103d9fd70>>
+{'id': '1728569202931.3972', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case5/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case5/a/input/something.json': '1729065ae144d74d0ff9fd6857f5cfe92cc245e6f5032a6d76483b6a5e67adbb'}, 'schools': ['table1'], 'history': ['./test/data/case5/a/rollback/1728569202931.3972'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/case5/a/input/something.json']}}
+Files to be considered for IR
+{}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+Path Index
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.data_manager.DataManager object at 0x103df7a40>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103df7a40>>
+{'id': '1728569202937.5269', 'path_index': {}, 'checksums': {}, 'schools': [], 'history': ['./test/data/case6/a/rollback/1728569202937.5269'], 'school_index': {}}
+Files to be considered for IR
+{}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+Path Index
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.data_manager.DataManager object at 0x103df5910>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103df5910>>
+{'id': '1728569202954.918', 'path_index': {}, 'checksums': {}, 'schools': [], 'history': ['./test/data/case7/a/rollback/1728569202954.918'], 'school_index': {}}
+Files to be considered for IR
+{}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+Path Index
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.data_manager.DataManager object at 0x103df70b0>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103df70b0>>
+{'id': '1728569202963.302', 'path_index': {}, 'checksums': {}, 'schools': [], 'history': ['./test/data/case8/a/rollback/1728569202963.302'], 'school_index': {}}
+Files to be considered for IR
+{}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+Path Index
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.data_manager.DataManager object at 0x103df7b00>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103df7b00>>
+{'id': '1728569202971.458', 'path_index': {}, 'checksums': {}, 'schools': [], 'history': ['./test/data/case9/a/rollback/1728569202971.458'], 'school_index': {}}
+Files to be considered for IR
+{}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+Path Index
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.data_manager.DataManager object at 0x103df60f0>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x103df60f0>>
+{'id': '1728569202979.276', 'path_index': {}, 'checksums': {}, 'schools': [], 'history': ['./test/data/case10/a/rollback/1728569202979.276'], 'school_index': {}}

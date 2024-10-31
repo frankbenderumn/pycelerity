@@ -1,0 +1,9 @@
+{
+	"todo": {
+		"*id:int": {},
+		"name:str": {"limit": 50},
+		"completed:bool": {},
+		"@arson->id:int": {},
+		"angry:str": {"limit": 50}
+	}
+}

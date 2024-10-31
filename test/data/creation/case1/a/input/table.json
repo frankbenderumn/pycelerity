@@ -1,0 +1,7 @@
+{
+	"table": {
+		"!id:int": {},
+		"comment:str": {"limit": 100},
+		"priority:int": {}
+	}
+}

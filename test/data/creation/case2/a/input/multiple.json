@@ -1,0 +1,12 @@
+{
+	"table1": {
+		"!id:int": {},
+		"gate:bool": {},
+		"effective:int": {}
+	},
+	"table2": {
+		"!id:int": {},
+		"gate:bool": {},
+		"prio:int": {}
+	}
+}

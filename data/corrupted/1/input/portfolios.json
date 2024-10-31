@@ -1,0 +1,8 @@
+{
+	"portfolio": {
+		"*id:int": {},
+		"name:str": {"limit": 50},
+		"prio:int": {},
+		"completed:bool": {} 
+	}
+}

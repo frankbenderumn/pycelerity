@@ -1,0 +1,225 @@
+Mock Timestamp
+mock_timestamp_m
+
+Files to be considered for IR
+	./test/data/creation/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: comment:str
+		Fish Info
+		==================================================
+		Fish Name              : comment
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: priority:int
+		Fish Info
+		==================================================
+		Fish Name              : priority
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table
+		!id:int          -- {}              
+		comment:str      -- {'limit': 100}  
+		priority:int     -- {}              
+Path Index
+	./test/data/creation/case1/a/input/table.json: ['table']       
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x10221dfd0>}
+Serialized Schema
+===========================================
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta Detected! Updating schema!
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case1/a/input/', 'output': './test/data/creation/case1/a/output/', 'rollback': './test/data/creation/case1/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table" (
+	comment VARCHAR(100) NOT NULL,
+	priority INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': 'mock_timestamp_m\n', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json': ['table']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json': 'aacbba7f6659fc3ea4379903ff1e449ce13c25e64dad8e9bc613aa41c75a5edd'}, 'schools': ['table'], 'history': ['./test/data/creation/case1/a/rollback/mock_timestamp_m\n'], 'school_index': {'table': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json']}}
+Mock Timestamp
+mock_timestamp_n
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gate:bool
+		Fish Info
+		==================================================
+		Fish Name              : gate
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: effective:int
+		Fish Info
+		==================================================
+		Fish Name              : effective
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gate:bool
+		Fish Info
+		==================================================
+		Fish Name              : gate
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: prio:int
+		Fish Info
+		==================================================
+		Fish Name              : prio
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index
+	./test/data/creation/case2/a/input/multiple.json: ['table1', 'table2']
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x101f43980>}
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1022abdd0>}
+Serialized Schema
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Delta Detected! Updating schema!
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case2/a/input/', 'output': './test/data/creation/case2/a/output/', 'rollback': './test/data/creation/case2/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': 'mock_timestamp_n', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': ['table1', 'table2']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': 'ff543c904e2ad60c907b7b9c1bc42a921be0593f54048842a15feb9d8a935d65'}, 'schools': ['table1', 'table2'], 'history': ['./test/data/creation/case2/a/rollback/mock_timestamp_n'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json']}}
+Mock Timestamp
+mock_timestamp_0
+
+Files to be considered for IR
+	./test/data/updation/case2/a/input/school.json
+{'!id:int': {}, 'name:str': {'limit': 100}, 'attribute:int': {'default': 0}}
+{'!id:int': {}, 'name:str': {'limit': 100}, 'attribute:int': {'default': 0}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school '!id:int'
+School fishs for school 'attribute:int'
+	Raw Fish: default

@@ -1,0 +1,20 @@
+{'dbname': 'demo', 'user': 'gumdrop', 'password': 'luvugum101', 'host': '127.0.0.1', 'port': '5432'}
+You are connected to - ('PostgreSQL 15.8 (Homebrew) on aarch64-apple-darwin23.4.0, compiled by Apple clang version 15.0.0 (clang-1500.3.9.4), 64-bit',)
+{'user': 'gumdrop', 'channel_binding': 'prefer', 'dbname': 'demo', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslcertmode': 'allow', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'gssdelegation': '0', 'target_session_attrs': 'any', 'load_balance_hosts': 'disable'} 
+
+SCHEMA
+./data/output/schema.lock
+Schema loaded successfully!.
+TABLES
+	comment
+	todo
+	user
+	arson
+	follower
+	like
+	post
+	portfolio
+['comment', 'todo', 'user', 'arson', 'follower', 'like', 'post', 'portfolio']
+Column Names
+['id', 'fname', 'lname', 'email', 'gender', 'bio']
+['comment', 'todo', 'user', 'arson', 'follower', 'like', 'post', 'portfolio']

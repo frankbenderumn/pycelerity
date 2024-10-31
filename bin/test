@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source config/celerity
+
+# pytest ./test/transpilation/psql/test_school_updation.py
+
+pytest ./test/

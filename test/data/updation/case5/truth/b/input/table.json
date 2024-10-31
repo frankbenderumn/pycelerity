@@ -1,0 +1,20 @@
+{
+	"table": {
+		"!id:int": {},
+		"name:str": {
+			"limit": 200
+		},
+		"wellthen:str": {
+			"limit": 50,
+			"default": "Hello"
+		},
+		"checkurslef:int": {},
+		"boolean:int": {
+			"default": 50
+		},
+		"something:int": {
+			"default": 6969
+		},
+		"addedattr:int": {}
+	}
+}

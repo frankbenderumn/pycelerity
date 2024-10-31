@@ -1,0 +1,315 @@
+Dependency Graph
+{'todo': 'arson'}
+ERROR: Unresolved dependency
+Dependency Graph
+{}
+Dependency Graph
+{'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user'}
+Dependency Graph
+{'arson': 'portfolio'}
+Dependency Graph
+{'todo': 'arson'}
+TABLE ATTRS
+{'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+name:str
+Attribute Info
+=======================
+Attr Name       : name
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+prio:int
+Attribute Info
+=======================
+Attr Name       : prio
+Attr Type       : int
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+completed:bool
+Attribute Info
+=======================
+Attr Name       : completed
+Attr Type       : bool
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+TABLE ATTRS
+{'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+fname:str
+Attribute Info
+=======================
+Attr Name       : fname
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+lname:str
+Attribute Info
+=======================
+Attr Name       : lname
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+email:str!
+Attribute Info
+=======================
+Attr Name       : email
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : unique
+Attr Alias      : 
+gender:bool
+Attribute Info
+=======================
+Attr Name       : gender
+Attr Type       : bool
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+bio:str
+Attribute Info
+=======================
+Attr Name       : bio
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+TABLE ATTRS
+{'*id:int': {}, '@user->id=follower_id:int!': {}, '@user->id=followee_id:int!': {}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+@user->id=follower_id:int!
+Attribute Info
+=======================
+Attr Name       : user
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : unique
+Attr Alias      : follower_id
+@user->id=followee_id:int!
+Attribute Info
+=======================
+Attr Name       : user
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : unique
+Attr Alias      : followee_id
+TABLE ATTRS
+{'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+content:str
+Attribute Info
+=======================
+Attr Name       : content
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+@user->id:int!
+Attribute Info
+=======================
+Attr Name       : user
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : unique
+Attr Alias      : 
+TABLE ATTRS
+{'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}, '@post->id:int!': {}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+content:str
+Attribute Info
+=======================
+Attr Name       : content
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+@user->id:int!
+Attribute Info
+=======================
+Attr Name       : user
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : unique
+Attr Alias      : 
+@post->id:int!
+Attribute Info
+=======================
+Attr Name       : post
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : unique
+Attr Alias      : 
+TABLE ATTRS
+{'*id:int': {}, '@user->id:int!': {}, '#likeable': {}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+@user->id:int!
+Attribute Info
+=======================
+Attr Name       : user
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : unique
+Attr Alias      : 
+#likeable
+Attribute Info
+=======================
+Attr Name       : likeable
+Attr Type       : 
+Attr Constraint : poly
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+TABLE ATTRS
+{'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 50}, '@follower->id:int': {}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+@portfolio->id:int
+Attribute Info
+=======================
+Attr Name       : portfolio
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : 
+Attr Alias      : 
+text:str
+Attribute Info
+=======================
+Attr Name       : text
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+@follower->id:int
+Attribute Info
+=======================
+Attr Name       : follower
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : 
+Attr Alias      : 
+TABLE ATTRS
+{'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}, '@arson->id:int': {}}
+*id:int
+Attribute Info
+=======================
+Attr Name       : id
+Attr Type       : int
+Attr Constraint : id
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+name:str
+Attribute Info
+=======================
+Attr Name       : name
+Attr Type       : str
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+prio:int
+Attribute Info
+=======================
+Attr Name       : prio
+Attr Type       : int
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+completed:bool
+Attribute Info
+=======================
+Attr Name       : completed
+Attr Type       : bool
+Attr Constraint : 
+Attr Reference  : 
+Attr Special    : 
+Attr Alias      : 
+@arson->id:int
+Attribute Info
+=======================
+Attr Name       : arson
+Attr Type       : int
+Attr Constraint : fk
+Attr Reference  : id
+Attr Special    : 
+Attr Alias      : 

@@ -1,0 +1,82 @@
+{
+    "id": "1728423745250.476",
+    "path_index": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/something.json": [
+            "okay"
+        ],
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/todo.json": [
+            "todo"
+        ],
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/new_file.json": [
+            "wtf"
+        ],
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/portfolios.json": [
+            "portfolio"
+        ],
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/user.json": [
+            "user",
+            "follower",
+            "post",
+            "comment",
+            "like"
+        ],
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/arson.json": [
+            "arson"
+        ]
+    },
+    "checksums": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/something.json": "160f834afdba84f6b3e687f2861b7c9ed9ce676fed7bcb200235c016f26a2c5f",
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/todo.json": "1c82dfaf04faa3b928ca805b03b63c37ada4f803d461659c13c4e596fb17465a",
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/new_file.json": "a6143d8fdfedd69897fb77128d95ebeea1cf9c2530c443cfd23fe9fec7badd67",
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/portfolios.json": "f4c5624c594ebdb30feecec44ec7ebb0f3a6bf06741e14e55d5311f791c12f6a",
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/user.json": "ea838ae9675307250fa22f717690a0b77f0c70fdb968dec37943124902a8a1d0",
+        "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/arson.json": "b4083eab4c343772988576e35351eaf0c95cc94d0630bd82dc413fa23d601fad"
+    },
+    "schools": [
+        "user",
+        "portfolio",
+        "follower",
+        "post",
+        "comment",
+        "like",
+        "arson",
+        "todo",
+        "okay",
+        "wtf"
+    ],
+    "history": [
+        "./data/rollback/1728423745250.476"
+    ],
+    "school_index": {
+        "okay": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/something.json"
+        ],
+        "todo": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/todo.json"
+        ],
+        "wtf": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/new_file.json"
+        ],
+        "portfolio": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/portfolios.json"
+        ],
+        "user": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/user.json"
+        ],
+        "follower": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/user.json"
+        ],
+        "post": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/user.json"
+        ],
+        "comment": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/user.json"
+        ],
+        "like": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/user.json"
+        ],
+        "arson": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/data/input/arson.json"
+        ]
+    }
+}

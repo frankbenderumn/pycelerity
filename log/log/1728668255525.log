@@ -1,0 +1,350 @@
+Mock Timestamp
+1000
+Files to be considered for IR
+	./test/data/updation/case2/a/input/school.json
+{'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'attr:int': {'default': 0}}}
+{'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'attr:int': {'default': 0}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: name:str
+		Fish Info
+		==================================================
+		Fish Name              : name
+		Fish Type              : str
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: attr:int
+		Fish Info
+		==================================================
+		Fish Name              : attr
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+		name:str         -- {'limit': 100}  
+		attr:int         -- {'default': 0}  
+Path Index
+	./test/data/updation/case2/a/input/school.json: ['table1']      
+ATTR SPECIAL
+
+ATTR SPECIAL
+
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x102c8cd40>}
+Serialized Schema
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	attr INTEGER NOT NULL DEFAULT 0,
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	attr INTEGER NOT NULL DEFAULT 0,
+	id SERIAL PRIMARY KEY
+);
+
+Delta Detected! Updating schema!
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case2/a/input/', 'output': './test/data/updation/case2/a/output/', 'rollback': './test/data/updation/case2/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	name VARCHAR(100) NOT NULL,
+	attr INTEGER NOT NULL DEFAULT 0,
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': '1000', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case2/a/input/school.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case2/a/input/school.json': '3a1a46b547cb6537f9be71f05ac7a1c3d528ca79bfee2c323e4c211f0081a557'}, 'schools': ['table1'], 'history': [], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case2/a/input/school.json']}}
+Mock Timestamp
+1000
+Files to be considered for IR
+	./test/data/updation/case3/a/input/schools.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table5'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table6'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+	table3
+		!id:int          -- {}              
+	table4
+		!id:int          -- {}              
+	table5
+		!id:int          -- {}              
+	table6
+		!id:int          -- {}              
+Path Index
+	./test/data/updation/case3/a/input/schools.json: ['table1', 'table2', 'table3', 'table4', 'table5', 'table6']
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105df1ee0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105d3a780>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105df0a40>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105df1a90>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105df1f40>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105d61c40>}
+Serialized Schema
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+
+Delta Detected! Updating schema!
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/a/input/', 'output': './test/data/updation/case3/a/output/', 'rollback': './test/data/updation/case3/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': '1000', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json': ['table1', 'table2', 'table3', 'table4', 'table5', 'table6']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json': '873eccd611054bbe72dd60fdf90b8a99be7483cb659723f816a6a5b81d0007ee'}, 'schools': ['table1', 'table2', 'table3', 'table4', 'table5', 'table6'], 'history': [], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json'], 'table3': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json'], 'table4': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json'], 'table5': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json'], 'table6': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/a/input/schools.json']}}
+Mock Timestamp
+1001
+Files to be considered for IR
+	./test/data/updation/case3/a/input/schools.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table5'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table6'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+	table3
+		!id:int          -- {}              
+	table4
+		!id:int          -- {}              
+	table5
+		!id:int          -- {}              
+	table6
+		!id:int          -- {}              
+Path Index
+	./test/data/updation/case3/a/input/schools.json: ['table1', 'table2', 'table3', 'table4', 'table5', 'table6']
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105d56300>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105dd26f0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105dd2a80>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105dd3d10>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105dd0c80>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106a3fda0>}
+Serialized Schema
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+

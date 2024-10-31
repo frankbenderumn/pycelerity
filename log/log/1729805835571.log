@@ -1,0 +1,183 @@
+[]
+Mock Timestamp
+1002.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table'
+[]
+Mock Timestamp
+1003.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1004.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1005.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1006.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1007.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case6/a/input/input.json
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1008.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case7/a/input/user.json
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+Dependency Graph
+	{'post': 'user'}
+Sorted deps
+	['user', 'post']
+School fishs for school 'user'
+[]
+Mock Timestamp
+1009.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case8/a/input/polymorphic.json
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'employee'
+[]
+Mock Timestamp
+1010.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case9/a/input/file2.json
+	./test/data/creation/case9/a/input/file1.json
+{'table2': {'!id:int': {}, 'eureka:int': {}}, 'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1011.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case10/a/input/validations.json
+{'validations': {'!id:int': {}, 'name:str*': {'limit': 100, 'default': 'hello'}, 'name2:int*': {'default': 10}, 'email:str*': {'limit': 500, 'regex': 'email'}, 'nullable:bool?': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'validations'
+[]
+Mock Timestamp
+1000.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case3/sim/a/input/schools.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1000.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case4/sim/a/input/table1.json
+{'table1': {'!id:int': {}, 'welcome:str': {'limit': 500}, 'food:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+[]
+Mock Timestamp
+1000.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case5/sim/a/input/table.json
+{'table': {'!id:int': {}, 'name:str': {'limit': 100}, 'wellthen:str': {'limit': 100}, 'checkurslef:int': {'default': 5}, 'boolean:bool': {'default': True}, 'something:int': {'default': 9}, 'jose:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table'

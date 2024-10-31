@@ -1,0 +1,18 @@
+Files to be considered for IR
+	./data/input/something.json
+{}
+	./data/input/todo.json
+{'todo': {'*id:int': {}, 'name:str': {'limit': 50}, 'completed:bool': {}, '@arson->id:int': {}}}
+	./data/input/new_file.json
+{'wtf': {'*ow:int': {}, 'my:int': {}}}
+	./data/input/portfolios.json
+{'portfolio': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}, 'records:str': {'limit': 500}}}
+	./data/input/user.json
+{'user': {'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}, 'follower': {'*id:int': {}, '@user->id=follower_id:int!': {}, '@user->id=followee_id:int!': {}}, 'post': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}}, 'comment': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}, '@post->id:int!': {}}, 'like': {'*id:int': {}, '@user->id:int!': {}, 'money:str': {'limit': 500}, '#likeable': {}}}
+	./data/input/arson.json
+{'arson': {'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 100}, '@follower->id:int': {}}, 'shite': {'*id:int': {}, 'why:str': {'limit': 100}}}
+{'todo': {'*id:int': {}, 'name:str': {'limit': 50}, 'completed:bool': {}, '@arson->id:int': {}}, 'wtf': {'*ow:int': {}, 'my:int': {}}, 'portfolio': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}, 'records:str': {'limit': 500}}, 'user': {'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}, 'follower': {'*id:int': {}, '@user->id=follower_id:int!': {}, '@user->id=followee_id:int!': {}}, 'post': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}}, 'comment': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}, '@post->id:int!': {}}, 'like': {'*id:int': {}, '@user->id:int!': {}, 'money:str': {'limit': 500}, '#likeable': {}}, 'arson': {'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 100}, '@follower->id:int': {}}, 'shite': {'*id:int': {}, 'why:str': {'limit': 100}}}
+Dependency Graph
+	{'todo': 'arson', 'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user', 'arson': 'portfolio'}
+Sorted deps
+	['user', 'portfolio', 'follower', 'post', 'comment', 'like', 'arson', 'todo']

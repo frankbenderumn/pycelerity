@@ -1,0 +1,15 @@
+{
+	"table1": {
+		"!id:int": {},
+		"name:str": {
+			"limit": 500
+		},
+		"prio:int": {
+			"default": 20
+		},
+		"bio:str": {
+			"limit": 300,
+			"default": "Insert Bio"
+		}
+	}
+}

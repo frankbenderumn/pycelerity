@@ -1,0 +1,1496 @@
+[]
+Mock Timestamp
+1002.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: comment:str
+[]
+Mock Timestamp
+1003.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gate:bool
+		Fish Info
+		==================================================
+		Fish Name              : gate
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: effective:int
+		Fish Info
+		==================================================
+		Fish Name              : effective
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gate:bool
+		Fish Info
+		==================================================
+		Fish Name              : gate
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: prio:int
+		Fish Info
+		==================================================
+		Fish Name              : prio
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': 'a6dc442e6a19577e36becb6217c11e1f52e60b544e2e262133af70b9d113e623', 'table2': 'b1aa8e6dd589a211e503f1f676c6cb518e8e0f1608414779f75eb0fc114dadf5'}
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f8ee70>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f3b470>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case2/a/input/', 'output': './test/data/creation/case2/a/output/', 'rollback': './test/data/creation/case2/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': '1003.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': ['table1', 'table2']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': 'ff543c904e2ad60c907b7b9c1bc42a921be0593f54048842a15feb9d8a935d65'}, 'schools': ['table1', 'table2'], 'history': [], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json']}, 'school_checksums': {'table1': 'a6dc442e6a19577e36becb6217c11e1f52e60b544e2e262133af70b9d113e623', 'table2': 'b1aa8e6dd589a211e503f1f676c6cb518e8e0f1608414779f75eb0fc114dadf5'}}
+Error occurred while copying directory
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+[]
+Mock Timestamp
+1004.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: opt:int?
+		Fish Info
+		==================================================
+		Fish Name              : opt
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : optional
+		Fish Alias             : 
+	Raw Fish: string:str
+[]
+Mock Timestamp
+1005.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: opt:int*
+		Fish Info
+		==================================================
+		Fish Name              : opt
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : unique
+		Fish Alias             : 
+	Raw Fish: string:str
+[]
+Mock Timestamp
+1006.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: opt:int+
+		Fish Info
+		==================================================
+		Fish Name              : opt
+		Fish Type              : int
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : reqopt
+		Fish Alias             : 
+	Raw Fish: string:str
+[]
+Mock Timestamp
+1007.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case6/a/input/input.json
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int=alias1
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : alias
+		Fish Alias             : alias1
+	Raw Fish: name:str=alias2
+[]
+Mock Timestamp
+1008.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case7/a/input/user.json
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+Dependency Graph
+	{'post': 'user'}
+Sorted deps
+	['user', 'post']
+School fishs for school 'user'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: fname:str
+[]
+Mock Timestamp
+1009.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case8/a/input/polymorphic.json
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'employee'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: #employable
+		Fish Info
+		==================================================
+		Fish Name              : employable
+		Fish Type              : 
+		Fish School Constraint : poly
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'user'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: gender:bool
+		Fish Info
+		==================================================
+		Fish Name              : gender
+		Fish Type              : bool
+		Fish School Constraint : None
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'employee': {'!id:int': {}, '#employable': {}}, 'user': {'!id:int': {}, 'gender:bool': {}}}
+{'employee': {'!id:int': {}, '#employable': {}}, 'user': {'!id:int': {}, 'gender:bool': {}}}
+{'employee': '42ecb710a2782543b75c9a00d903edabbe50de7d2218a76cfc94ca2859613bcc', 'user': 'f8181d7976fa4dd8111ee4ac9f6c6dbaab35df24b9d96abe0fef76970441998d'}
+Schema IR
+	employee
+		!id:int          -- {}              
+		#employable      -- {}              
+	user
+		!id:int          -- {}              
+		gender:bool      -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105ff1850>, 'poly': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f38500>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x104ff1dc0>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "employee" (
+	id SERIAL PRIMARY KEY,
+	employable_type VARCHAR(50) NOT NULL,
+	employable_id INTEGER NOT NULL,
+	UNIQUE (employable_id, employable_type)
+);
+CREATE TABLE IF NOT EXISTS "user" (
+	gender BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/creation/case8/a/input/', 'output': './test/data/creation/case8/a/output/', 'rollback': './test/data/creation/case8/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "employee" (
+	id SERIAL PRIMARY KEY,
+	employable_type VARCHAR(50) NOT NULL,
+	employable_id INTEGER NOT NULL,
+	UNIQUE (employable_id, employable_type)
+);
+CREATE TABLE IF NOT EXISTS "user" (
+	gender BOOLEAN NOT NULL,
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': '1009.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json': ['user', 'employee']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json': 'cc0a47c9e5ba5e7a5453d1443444443a8433881994d0f18c4b5edce06ae97fa8'}, 'schools': ['user', 'employee'], 'history': [], 'school_index': {'user': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json'], 'employee': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json']}, 'school_checksums': {'employee': '42ecb710a2782543b75c9a00d903edabbe50de7d2218a76cfc94ca2859613bcc', 'user': 'f8181d7976fa4dd8111ee4ac9f6c6dbaab35df24b9d96abe0fef76970441998d'}}
+Error occurred while copying directory
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+[]
+Mock Timestamp
+1010.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case9/a/input/file2.json
+	./test/data/creation/case9/a/input/file1.json
+{'table2': {'!id:int': {}, 'eureka:int': {}}, 'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: name:str
+[]
+Mock Timestamp
+1011.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/creation/case10/a/input/validations.json
+{'validations': {'!id:int': {}, 'name:str*': {'limit': 100, 'default': 'hello'}, 'name2:int*': {'default': 10}, 'email:str*': {'limit': 500, 'regex': 'email'}, 'nullable:bool?': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'validations'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: name:str*
+[]
+Mock Timestamp
+1000.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case3/sim/a/input/schools.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table5'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table6'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}, 'table6': {'!id:int': {}}}
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table5': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table6': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+	table3
+		!id:int          -- {}              
+	table4
+		!id:int          -- {}              
+	table5
+		!id:int          -- {}              
+	table6
+		!id:int          -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f3b5c0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105a732c0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f3ad80>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f3a540>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106135e80>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f62600>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/sim/a/input/', 'output': './test/data/updation/case3/sim/a/output/', 'rollback': './test/data/updation/case3/sim/a/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': '1000.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json': ['table1', 'table2', 'table3', 'table4', 'table5', 'table6']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json': '873eccd611054bbe72dd60fdf90b8a99be7483cb659723f816a6a5b81d0007ee'}, 'schools': ['table1', 'table2', 'table3', 'table4', 'table5', 'table6'], 'history': [], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json'], 'table3': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json'], 'table4': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json'], 'table5': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json'], 'table6': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/a/input/schools.json']}, 'school_checksums': {'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table5': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table6': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}}
+Error occurred while copying directory
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+[]
+Mock Timestamp
+1001.0
+CREATING CONGREGATION WITH:
+{}
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table5'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table6'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case3/sim/b/input/schools2.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table5'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}, 'table5': {'!id:int': {}}}
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table5': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+	table3
+		!id:int          -- {}              
+	table4
+		!id:int          -- {}              
+	table5
+		!id:int          -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x105f54e00>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1061383b0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1061385f0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1061387d0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1060afa40>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+Schema checksum files are not the same
+	Old schools
+		['table1', 'table2', 'table3', 'table4', 'table5', 'table6']
+	New Schools
+		['table1', 'table2', 'table3', 'table4', 'table5']
+	Detected Creations
+		[]
+	Detected Deletions
+		['table6']
+	['table6']
+Delta Deletion
+DROP TABLE IF EXISTS "table6";
+
+Old checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table5': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table6': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+New checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table5': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Same schools
+['table1', 'table5', 'table2', 'table3', 'table4']
+Cross Reference
+[]
+No alteration detected
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+DROP TABLE IF EXISTS "table6";
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/sim/b/input/', 'output': './test/data/updation/case3/sim/b/output/', 'rollback': './test/data/updation/case3/sim/b/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+
+Metadata
+	{'id': '1001.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/b/input/schools2.json': ['table1', 'table2', 'table3', 'table4', 'table5']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/b/input/schools2.json': '5f96bc75117a4fc586dc1be019beba9bf2c6af2eb1e1a2d0343ef55612d0f438'}, 'schools': ['table1', 'table2', 'table3', 'table4', 'table5'], 'history': ['1000.0'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/b/input/schools2.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/b/input/schools2.json'], 'table3': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/b/input/schools2.json'], 'table4': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/b/input/schools2.json'], 'table5': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/b/input/schools2.json']}, 'school_checksums': {'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table5': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}}
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+['1000.0']
+Mock Timestamp
+1002.0
+CREATING CONGREGATION WITH:
+{}
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table5'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case3/sim/c/input/schools3.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}, 'table4': {'!id:int': {}}}
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+	table3
+		!id:int          -- {}              
+	table4
+		!id:int          -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106119a00>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106119e20>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106118290>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106119d90>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+Schema checksum files are not the same
+	Old schools
+		['table1', 'table2', 'table3', 'table4', 'table5']
+	New Schools
+		['table1', 'table2', 'table3', 'table4']
+	Detected Creations
+		[]
+	Detected Deletions
+		['table5']
+	['table5']
+Delta Deletion
+DROP TABLE IF EXISTS "table5";
+
+Old checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table5': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+New checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Same schools
+['table1', 'table2', 'table3', 'table4']
+Cross Reference
+[]
+No alteration detected
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+DROP TABLE IF EXISTS "table5";
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/sim/c/input/', 'output': './test/data/updation/case3/sim/c/output/', 'rollback': './test/data/updation/case3/sim/c/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+DROP TABLE IF EXISTS "table6";
+
+Metadata
+	{'id': '1002.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/c/input/schools3.json': ['table1', 'table2', 'table3', 'table4']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/c/input/schools3.json': '8cebbe2a84abfb3be275a8a656598f86b71910be0759ca6bd374534dad7d1170'}, 'schools': ['table1', 'table2', 'table3', 'table4'], 'history': ['1000.0', '1001.0'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/c/input/schools3.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/c/input/schools3.json'], 'table3': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/c/input/schools3.json'], 'table4': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/c/input/schools3.json']}, 'school_checksums': {'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}}
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+['1000.0', '1001.0']
+Mock Timestamp
+1003.0
+CREATING CONGREGATION WITH:
+{}
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table4'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case3/sim/d/input/schools4.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}, 'table3': {'!id:int': {}}}
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+	table3
+		!id:int          -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106135e80>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106137890>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1061365d0>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+Schema checksum files are not the same
+	Old schools
+		['table1', 'table2', 'table3', 'table4']
+	New Schools
+		['table1', 'table2', 'table3']
+	Detected Creations
+		[]
+	Detected Deletions
+		['table4']
+	['table4']
+Delta Deletion
+DROP TABLE IF EXISTS "table4";
+
+Old checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table4': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+New checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Same schools
+['table1', 'table2', 'table3']
+Cross Reference
+[]
+No alteration detected
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+DROP TABLE IF EXISTS "table4";
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/sim/d/input/', 'output': './test/data/updation/case3/sim/d/output/', 'rollback': './test/data/updation/case3/sim/d/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+DROP TABLE IF EXISTS "table6";
+DROP TABLE IF EXISTS "table5";
+
+Metadata
+	{'id': '1003.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/d/input/schools4.json': ['table1', 'table2', 'table3']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/d/input/schools4.json': 'c0475e54f2c24f4bd714718126256ff4ca4e73c7637208858f9884da8f935e48'}, 'schools': ['table1', 'table2', 'table3'], 'history': ['1000.0', '1001.0', '1002.0'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/d/input/schools4.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/d/input/schools4.json'], 'table3': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/d/input/schools4.json']}, 'school_checksums': {'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}}
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+['1000.0', '1001.0', '1002.0']
+Mock Timestamp
+1004.0
+CREATING CONGREGATION WITH:
+{}
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table3'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case3/sim/e/input/schools5.json
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}}
+{'table1': {'!id:int': {}}, 'table2': {'!id:int': {}}}
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Schema IR
+	table1
+		!id:int          -- {}              
+	table2
+		!id:int          -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x1061364b0>}
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x106136b70>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+Schema checksum files are not the same
+	Old schools
+		['table1', 'table2', 'table3']
+	New Schools
+		['table1', 'table2']
+	Detected Creations
+		[]
+	Detected Deletions
+		['table3']
+	['table3']
+Delta Deletion
+DROP TABLE IF EXISTS "table3";
+
+Old checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table3': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+New checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Same schools
+['table1', 'table2']
+Cross Reference
+[]
+No alteration detected
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+DROP TABLE IF EXISTS "table3";
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/sim/e/input/', 'output': './test/data/updation/case3/sim/e/output/', 'rollback': './test/data/updation/case3/sim/e/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+DROP TABLE IF EXISTS "table6";
+DROP TABLE IF EXISTS "table5";
+DROP TABLE IF EXISTS "table4";
+
+Metadata
+	{'id': '1004.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/e/input/schools5.json': ['table1', 'table2']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/e/input/schools5.json': '636810896a0c1ddef64441d48134303a7151e01dff3eb525caa9a4a5a8889528'}, 'schools': ['table1', 'table2'], 'history': ['1000.0', '1001.0', '1002.0', '1003.0'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/e/input/schools5.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/e/input/schools5.json']}, 'school_checksums': {'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}}
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+['1000.0', '1001.0', '1002.0', '1003.0']
+Mock Timestamp
+1005.0
+CREATING CONGREGATION WITH:
+{}
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+School fishs for school 'table2'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case3/sim/z/input/schools6.json
+{'table1': {'!id:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+CREATING CONGREGATION WITH:
+{'table1': {'!id:int': {}}}
+{'table1': {'!id:int': {}}}
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Schema IR
+	table1
+		!id:int          -- {}              
+Path Index: TODO ocean.dump()
+====================================================================================================OCEAN LOADED====================================================================================================
+----------------------------------------------------------------------------------------------------SERIALIZING OCEAN----------------------------------------------------------------------------------------------------
+{'pk': <celerity.ir.school_constraint.SchoolConstraint object at 0x10613a0f0>}
+Serialized Congregation
+===========================================
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+
+====================================================================================================OCEAN SERIALIZED====================================================================================================
+----------------------------------------------------------------------------------------------------LOADING DELTA----------------------------------------------------------------------------------------------------
+Schema checksum files are not the same
+	Old schools
+		['table1', 'table2']
+	New Schools
+		['table1']
+	Detected Creations
+		[]
+	Detected Deletions
+		['table2']
+	['table2']
+Delta Deletion
+DROP TABLE IF EXISTS "table2";
+
+Old checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a', 'table2': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+New checksums
+{'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}
+Same schools
+['table1']
+Cross Reference
+[]
+No alteration detected
+====================================================================================================DELTA RAN====================================================================================================
+----------------------------------------------------------------------------------------------------PERSISTING OCEAN----------------------------------------------------------------------------------------------------
+Delta
+DROP TABLE IF EXISTS "table2";
+
+PERSIST DIRECTORIES
+{'input': './test/data/updation/case3/sim/z/input/', 'output': './test/data/updation/case3/sim/z/output/', 'rollback': './test/data/updation/case3/sim/z/rollback/'}
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table3" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table4" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table5" (
+	id SERIAL PRIMARY KEY
+);
+CREATE TABLE IF NOT EXISTS "table6" (
+	id SERIAL PRIMARY KEY
+);
+DROP TABLE IF EXISTS "table6";
+DROP TABLE IF EXISTS "table5";
+DROP TABLE IF EXISTS "table4";
+DROP TABLE IF EXISTS "table3";
+
+Metadata
+	{'id': '1005.0', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/z/input/schools6.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/z/input/schools6.json': 'ef0193da6e42f9eb9584ad0bf504046990e3a9b5361de7870c042dd731225d70'}, 'schools': ['table1'], 'history': ['1000.0', '1001.0', '1002.0', '1003.0', '1004.0'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case3/sim/z/input/schools6.json']}, 'school_checksums': {'table1': '15cc935c9c8c6f59df4a03f881117203b9b9b7c76011ba0f990ba7c50417b69a'}}
+====================================================================================================OCEAN PERSISTED====================================================================================================
+====================================================================================================Terminated Gracefully====================================================================================================
+[]
+Mock Timestamp
+1000.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case4/sim/a/input/table1.json
+{'table1': {'!id:int': {}, 'welcome:str': {'limit': 500}, 'food:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table1'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: welcome:str
+[]
+Mock Timestamp
+1000.0
+CREATING CONGREGATION WITH:
+{}
+----------------------------------------------------------------------------------------------------LOADING OCEAN----------------------------------------------------------------------------------------------------
+Files to be considered for IR
+	./test/data/updation/case5/sim/a/input/table.json
+{'table': {'!id:int': {}, 'name:str': {'limit': 100}, 'wellthen:str': {'limit': 100}, 'checkurslef:int': {'default': 5}, 'boolean:bool': {'default': True}, 'something:int': {'default': 9}, 'jose:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school 'table'
+	Raw Fish: !id:int
+		Fish Info
+		==================================================
+		Fish Name              : id
+		Fish Type              : int
+		Fish School Constraint : pk
+		Fish Reference         : 
+		Fish Special           : 
+		Fish Alias             : 
+	Raw Fish: name:str

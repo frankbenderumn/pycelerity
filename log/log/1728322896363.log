@@ -1,0 +1,2 @@
+Dependency Graph
+{'todo': 'arson', 'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user', 'arson': 'portfolio'}

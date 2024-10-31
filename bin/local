@@ -1,0 +1,12 @@
+#!/bin/bash
+
+git init
+source config/settings
+LOCAL_WHEEL_DIR=/Users/josephbender/Desktop/programming/python/local_wheels/
+mkdir -p ${LOCAL_WHEEL_DIR}
+python3 setup.py sdist bdist_wheel
+BASENAME=pycelerity-0.0.2-py3-none-any.whl
+mv ./dist/${BASENAME} ${LOCAL_WHEEL_DIR}
+rm -rf build/
+rm -rf dist/
+pip install --force-reinstall ${LOCAL_WHEEL_DIR}${BASENAME}

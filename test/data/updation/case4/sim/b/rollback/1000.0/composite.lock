@@ -1,0 +1,9 @@
+{
+    "table1": {
+        "!id:int": {},
+        "welcome:str": {
+            "limit": 500
+        },
+        "food:int": {}
+    }
+}

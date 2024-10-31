@@ -1,0 +1,212 @@
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index
+	./test/data/creation/case2/a/input/multiple.json: ['table1', 'table2']
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: gate:bool
+ATTR SPECIAL
+
+	Raw Attr: effective:int
+ATTR SPECIAL
+
+Table attrs for table 'table2'
+	Raw Attr: !id:int
+	Raw Attr: gate:bool
+ATTR SPECIAL
+
+	Raw Attr: prio:int
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	effective INTEGER NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "table2" (
+	id SERIAL PRIMARY KEY,
+	gate BOOLEAN NOT NULL,
+	prio INTEGER NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x1045bdac0>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x1045bdac0>>
+{'id': '1728569460137.63', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': ['table1', 'table2']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': 'ff543c904e2ad60c907b7b9c1bc42a921be0593f54048842a15feb9d8a935d65'}, 'schools': ['table1', 'table2'], 'history': ['./test/data/creation/case2/a/rollback/1728569460137.63'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json']}}
+Files to be considered for IR
+	./test/data/creation/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int?         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case3/a/input/optional.json: ['table1']      
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: opt:int?
+ATTR SPECIAL
+optional
+	Raw Attr: string:str
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x1045bfbc0>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x1045bfbc0>>
+{'id': '1728569460142.2458', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json': '1ae8f60dd8dc0c63ad4965c58ba44b4ed49d927ed2b859323318283669cb1151'}, 'schools': ['table1'], 'history': ['./test/data/creation/case3/a/rollback/1728569460142.2458'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json']}}
+Files to be considered for IR
+	./test/data/creation/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int*         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case4/a/input/something.json: ['table1']      
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: opt:int*
+ATTR SPECIAL
+unique
+	Raw Attr: string:str
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NOT NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x1045be750>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x1045be750>>
+{'id': '1728569460146.046', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json': '818865fa9d3df9f9706573a42b183325bd30fe5897f87b6ba25da16e8df85dff'}, 'schools': ['table1'], 'history': ['./test/data/creation/case4/a/rollback/1728569460146.046'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json']}}
+Files to be considered for IR
+	./test/data/creation/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int+         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case5/a/input/something.json: ['table1']      
+Table attrs for table 'table1'
+	Raw Attr: !id:int
+	Raw Attr: opt:int+
+ATTR SPECIAL
+reqopt
+	Raw Attr: string:str
+ATTR SPECIAL
+
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+Schema being rewritten
+Delta
+
+old schema
+CREATE TABLE IF NOT EXISTS "table1" (
+	id SERIAL PRIMARY KEY,
+	opt INTEGER UNIQUE NULL,
+	string VARCHAR(100) NOT NULL
+);
+
+<celerity.transpiler.data_manager.DataManager object at 0x1045bf200>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x1045bf200>>
+{'id': '1728569460150.485', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json': '1729065ae144d74d0ff9fd6857f5cfe92cc245e6f5032a6d76483b6a5e67adbb'}, 'schools': ['table1'], 'history': ['./test/data/creation/case5/a/rollback/1728569460150.485'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json']}}
+Files to be considered for IR
+{}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+Path Index
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.data_manager.DataManager object at 0x1046de1b0>
+<bound method DataManager.metadata of <celerity.transpiler.data_manager.DataManager object at 0x1046de1b0>>
+{'id': '1728569460154.513', 'path_index': {}, 'checksums': {}, 'schools': [], 'history': ['./test/data/creation/case6/a/rollback/1728569460154.513'], 'school_index': {}}

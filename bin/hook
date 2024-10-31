@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#!/bin/bash
+black .
+if [ $? -ne 0 ]; then
+  echo -e "\033[1;31mError: Black encountered issues. Please fix the formatting errors and try again.\033[0m"
+  exit 1
+fi
+ruff check --fix .
+if [ $? -ne 0 ]; then
+  echo -e "\033[1;31mError: Ruff found linting errors. Please fix the issues and try again.\033[0m"
+  exit 1
+fi
+pytest test/*
+if [ $? -ne 0 ]; then
+  echo -e "\033[1;31mError: Pytests failed.\033[0m"
+  exit 1
+fi

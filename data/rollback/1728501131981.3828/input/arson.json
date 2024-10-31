@@ -1,0 +1,13 @@
+{
+	"arson": {
+		"*id:int": {},
+		"@portfolio->id:int": {},
+		"text:str": {"limit": 100},
+		"@follower->id:int": {}
+	},
+	"shite": {
+		"*id:int": {},
+		"get:str": {"limit": 500},
+		"why:str": {"limit": 100}
+	}
+}

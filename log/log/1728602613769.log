@@ -1,0 +1,244 @@
+Files to be considered for IR
+	./test/data/creation/case1/a/input/table.json
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+{'table': {'!id:int': {}, 'comment:str': {'limit': 100}, 'priority:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table
+		!id:int          -- {}              
+		comment:str      -- {'limit': 100}  
+		priority:int     -- {}              
+Path Index
+	./test/data/creation/case1/a/input/table.json: ['table']       
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x103912a20>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x103912a20>>
+{'id': '1728602613785.64', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json': ['table']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json': 'aacbba7f6659fc3ea4379903ff1e449ce13c25e64dad8e9bc613aa41c75a5edd'}, 'schools': ['table'], 'history': ['./test/data/creation/case1/a/rollback/1728602613785.64'], 'school_index': {'table': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case1/a/input/table.json']}}
+Files to be considered for IR
+	./test/data/creation/case2/a/input/multiple.json
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+{'table1': {'!id:int': {}, 'gate:bool': {}, 'effective:int': {}}, 'table2': {'!id:int': {}, 'gate:bool': {}, 'prio:int': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		effective:int    -- {}              
+	table2
+		!id:int          -- {}              
+		gate:bool        -- {}              
+		prio:int         -- {}              
+Path Index
+	./test/data/creation/case2/a/input/multiple.json: ['table1', 'table2']
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x1038d20f0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x1038d20f0>>
+{'id': '1728602613802.488', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': ['table1', 'table2']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json': 'ff543c904e2ad60c907b7b9c1bc42a921be0593f54048842a15feb9d8a935d65'}, 'schools': ['table1', 'table2'], 'history': ['./test/data/creation/case2/a/rollback/1728602613802.488'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json'], 'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case2/a/input/multiple.json']}}
+Files to be considered for IR
+	./test/data/creation/case3/a/input/optional.json
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int?': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int?         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case3/a/input/optional.json: ['table1']      
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x103910650>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x103910650>>
+{'id': '1728602613809.8262', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json': '1ae8f60dd8dc0c63ad4965c58ba44b4ed49d927ed2b859323318283669cb1151'}, 'schools': ['table1'], 'history': ['./test/data/creation/case3/a/rollback/1728602613809.8262'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case3/a/input/optional.json']}}
+Files to be considered for IR
+	./test/data/creation/case4/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int*': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int*         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case4/a/input/something.json: ['table1']      
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x1038d33e0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x1038d33e0>>
+{'id': '1728602613816.03', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json': '818865fa9d3df9f9706573a42b183325bd30fe5897f87b6ba25da16e8df85dff'}, 'schools': ['table1'], 'history': ['./test/data/creation/case4/a/rollback/1728602613816.03'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case4/a/input/something.json']}}
+Files to be considered for IR
+	./test/data/creation/case5/a/input/something.json
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+{'table1': {'!id:int': {}, 'opt:int+': {}, 'string:str': {'limit': 100}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		opt:int+         -- {}              
+		string:str       -- {'limit': 100}  
+Path Index
+	./test/data/creation/case5/a/input/something.json: ['table1']      
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x10399bf80>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x10399bf80>>
+{'id': '1728602613823.143', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json': '1729065ae144d74d0ff9fd6857f5cfe92cc245e6f5032a6d76483b6a5e67adbb'}, 'schools': ['table1'], 'history': ['./test/data/creation/case5/a/rollback/1728602613823.143'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case5/a/input/something.json']}}
+Files to be considered for IR
+	./test/data/creation/case6/a/input/input.json
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+{'table1': {'!id:int=alias1': {}, 'name:str=alias2': {'limit': 100}, 'something:int=alias3': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int=alias1   -- {}              
+		name:str=alias2  -- {'limit': 100}  
+		something:int=alias3 -- {}              
+Path Index
+	./test/data/creation/case6/a/input/input.json: ['table1']      
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x10399a9c0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x10399a9c0>>
+{'id': '1728602613829.9949', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case6/a/input/input.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case6/a/input/input.json': 'd8caa444de6ad3c032a67da233075d4b22e4f1e20d18577db6f00407001a513a'}, 'schools': ['table1'], 'history': ['./test/data/creation/case6/a/rollback/1728602613829.9949'], 'school_index': {'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case6/a/input/input.json']}}
+Files to be considered for IR
+	./test/data/creation/case7/a/input/user.json
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+{'user': {'!id:int': {}, 'fname:str': {'limit': 50}, 'lname:str': {'limit': 50}, 'email:str': {'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 500}}, 'post': {'!id:int': {}, 'content:str': {'limit': 300}, '@user->id:int=user_id': {}}}
+Dependency Graph
+	{'post': 'user'}
+Sorted deps
+	['user', 'post']
+Schema IR
+	user
+		!id:int          -- {}              
+		fname:str        -- {'limit': 50}   
+		lname:str        -- {'limit': 50}   
+		email:str        -- {'limit': 100}  
+		gender:bool      -- {}              
+		bio:str          -- {'limit': 500}  
+	post
+		!id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int=user_id -- {}              
+Path Index
+	./test/data/creation/case7/a/input/user.json: ['user', 'post']
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x10399a9f0>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x10399a9f0>>
+{'id': '1728602613837.45', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json': ['user', 'post']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json': '78deee19834e4f943eb2fabb1319a4fc85e00d28ad5415dc6eceae2e3ccc1dab'}, 'schools': ['user', 'post'], 'history': ['./test/data/creation/case7/a/rollback/1728602613837.45'], 'school_index': {'user': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json'], 'post': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case7/a/input/user.json']}}
+Files to be considered for IR
+	./test/data/creation/case8/a/input/polymorphic.json
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+{'user': {'!id:int': {}, 'gender:bool': {}}, 'employee': {'!id:int': {}, '#employable': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	employee
+		!id:int          -- {}              
+		#employable      -- {}              
+	user
+		!id:int          -- {}              
+		gender:bool      -- {}              
+Path Index
+	./test/data/creation/case8/a/input/polymorphic.json: ['user', 'employee']
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x10399a990>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x10399a990>>
+{'id': '1728602613845.083', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json': ['user', 'employee']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json': 'cc0a47c9e5ba5e7a5453d1443444443a8433881994d0f18c4b5edce06ae97fa8'}, 'schools': ['employee', 'user'], 'history': ['./test/data/creation/case8/a/rollback/1728602613845.083'], 'school_index': {'user': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json'], 'employee': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case8/a/input/polymorphic.json']}}
+Files to be considered for IR
+	./test/data/creation/case9/a/input/file2.json
+{'table2': {'!id:int': {}, 'eureka:int': {}}}
+	./test/data/creation/case9/a/input/file1.json
+{'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+{'table2': {'!id:int': {}, 'eureka:int': {}}, 'table1': {'!id:int': {}, 'name:str': {'limit': 100}, 'cool:bool': {}}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+Schema IR
+	table1
+		!id:int          -- {}              
+		name:str         -- {'limit': 100}  
+		cool:bool        -- {}              
+	table2
+		!id:int          -- {}              
+		eureka:int       -- {}              
+Path Index
+	./test/data/creation/case9/a/input/file2.json: ['table2']      
+	./test/data/creation/case9/a/input/file1.json: ['table1']      
+Schema Bytes
+
+Schema being rewritten
+Delta
+
+old schema
+
+<celerity.transpiler.ocean.Ocean object at 0x10399a660>
+<bound method Ocean.metadata of <celerity.transpiler.ocean.Ocean object at 0x10399a660>>
+{'id': '1728602613852.99', 'path_index': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file2.json': ['table2'], '/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file1.json': ['table1']}, 'checksums': {'/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file2.json': '40e7ed1e4dee546830a34fa85965342f40193b3c36ab8426dcda1bf99b22c540', '/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file1.json': '0a6b3eac26f5533f6bdaf4654dd7f085607ac42ed034cc7e16addcd0bd0bd1a8'}, 'schools': ['table1', 'table2'], 'history': ['./test/data/creation/case9/a/rollback/1728602613852.99'], 'school_index': {'table2': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file2.json'], 'table1': ['/Users/josephbender/Desktop/programming/python/pycelerity/test/data/creation/case9/a/input/file1.json']}}

@@ -1,0 +1,13 @@
+Dependency Graph
+{'todo': 'arson'}
+ERROR: Unresolved dependency
+Dependency Graph
+{}
+Dependency Graph
+{'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user'}
+Dependency Graph
+{'arson': 'portfolio'}
+Dependency Graph
+{'todo': 'arson'}
+TABLE ATTRS
+{'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}}

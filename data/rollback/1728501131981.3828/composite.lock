@@ -1,0 +1,97 @@
+{
+    "user": {
+        "*id:int": {},
+        "fname:str": {
+            "regex": "",
+            "limit": 32
+        },
+        "lname:str": {
+            "regex": "",
+            "limit": 32
+        },
+        "email:str!": {
+            "regex": "email",
+            "limit": 100
+        },
+        "gender:bool": {},
+        "bio:str": {
+            "limit": 300
+        }
+    },
+    "portfolio": {
+        "*id:int": {},
+        "name:str": {
+            "limit": 50
+        },
+        "prio:int": {},
+        "completed:bool": {},
+        "records:str": {
+            "limit": 500
+        },
+        "great:int": {}
+    },
+    "follower": {
+        "*id:int": {},
+        "@user->id=follower_id:int!": {},
+        "@user->id=followee_id:int!": {}
+    },
+    "post": {
+        "*id:int": {},
+        "content:str": {
+            "limit": 300
+        },
+        "@user->id:int!": {}
+    },
+    "comment": {
+        "*id:int": {},
+        "content:str": {
+            "limit": 300
+        },
+        "@user->id:int!": {},
+        "@post->id:int!": {}
+    },
+    "like": {
+        "*id:int": {},
+        "@user->id:int!": {},
+        "money:str": {
+            "limit": 500
+        },
+        "#likeable": {}
+    },
+    "arson": {
+        "*id:int": {},
+        "@portfolio->id:int": {},
+        "text:str": {
+            "limit": 100
+        },
+        "@follower->id:int": {}
+    },
+    "todo": {
+        "*id:int": {},
+        "name:str": {
+            "limit": 50
+        },
+        "completed:bool": {},
+        "@arson->id:int": {},
+        "angry:str": {
+            "limit": 50
+        }
+    },
+    "shite": {
+        "*id:int": {},
+        "get:str": {
+            "limit": 500
+        },
+        "why:str": {
+            "limit": 100
+        }
+    },
+    "wtf": {
+        "*ow:int": {},
+        "my:int": {},
+        "on:int": {},
+        "why:str": {
+            "limit": 100
+        }
+    }
+}

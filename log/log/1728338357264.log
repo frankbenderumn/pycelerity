@@ -1,0 +1,168 @@
+Files to be considered for IR
+	./data/input/todo.json
+{'todo': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}, '@arson->id:int': {}}}
+	./data/input/new_file.json
+{}
+	./data/input/portfolios.json
+{'portfolio': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}}}
+	./data/input/user.json
+{'user': {'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}, 'follower': {'*id:int': {}, '@user->id=follower_id:int!': {}, '@user->id=followee_id:int!': {}}, 'post': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}}, 'comment': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}, '@post->id:int!': {}}, 'like': {'*id:int': {}, '@user->id:int!': {}, 'money:str': {'limit': 500}, '#likeable': {}}}
+	./data/input/arson.json
+{'arson': {'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 50}, '@follower->id:int': {}}}
+{'todo': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}, '@arson->id:int': {}}, 'portfolio': {'*id:int': {}, 'name:str': {'limit': 50}, 'prio:int': {}, 'completed:bool': {}}, 'user': {'*id:int': {}, 'fname:str': {'regex': '', 'limit': 32}, 'lname:str': {'regex': '', 'limit': 32}, 'email:str!': {'regex': 'email', 'limit': 100}, 'gender:bool': {}, 'bio:str': {'limit': 300}}, 'follower': {'*id:int': {}, '@user->id=follower_id:int!': {}, '@user->id=followee_id:int!': {}}, 'post': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}}, 'comment': {'*id:int': {}, 'content:str': {'limit': 300}, '@user->id:int!': {}, '@post->id:int!': {}}, 'like': {'*id:int': {}, '@user->id:int!': {}, 'money:str': {'limit': 500}, '#likeable': {}}, 'arson': {'*id:int': {}, '@portfolio->id:int': {}, 'text:str': {'limit': 50}, '@follower->id:int': {}}}
+Dependency Graph
+	{'todo': 'arson', 'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user', 'arson': 'portfolio'}
+Sorted deps
+	['user', 'portfolio', 'follower', 'post', 'comment', 'like', 'arson', 'todo']
+Schema IR
+	user
+		*id:int          -- {}              
+		fname:str        -- {'regex': '', 'limit': 32}
+		lname:str        -- {'regex': '', 'limit': 32}
+		email:str!       -- {'regex': 'email', 'limit': 100}
+		gender:bool      -- {}              
+		bio:str          -- {'limit': 300}  
+	portfolio
+		*id:int          -- {}              
+		name:str         -- {'limit': 50}   
+		prio:int         -- {}              
+		completed:bool   -- {}              
+	follower
+		*id:int          -- {}              
+		@user->id=follower_id:int! -- {}              
+		@user->id=followee_id:int! -- {}              
+	post
+		*id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int!   -- {}              
+	comment
+		*id:int          -- {}              
+		content:str      -- {'limit': 300}  
+		@user->id:int!   -- {}              
+		@post->id:int!   -- {}              
+	like
+		*id:int          -- {}              
+		@user->id:int!   -- {}              
+		money:str        -- {'limit': 500}  
+		#likeable        -- {}              
+	arson
+		*id:int          -- {}              
+		@portfolio->id:int -- {}              
+		text:str         -- {'limit': 50}   
+		@follower->id:int -- {}              
+	todo
+		*id:int          -- {}              
+		name:str         -- {'limit': 50}   
+		prio:int         -- {}              
+		completed:bool   -- {}              
+		@arson->id:int   -- {}              
+Path Index
+	./data/input/todo.json          : ['todo']        
+	./data/input/new_file.json      : []              
+	./data/input/portfolios.json    : ['portfolio']   
+	./data/input/user.json          : ['user', 'follower', 'post', 'comment', 'like']
+	./data/input/arson.json         : ['arson']       
+Table attrs for table 'user'
+	*id:int
+	fname:str
+	lname:str
+	email:str!
+	gender:bool
+	bio:str
+Table attrs for table 'portfolio'
+	*id:int
+	name:str
+	prio:int
+	completed:bool
+Table attrs for table 'follower'
+	*id:int
+	@user->id=follower_id:int!
+	@user->id=followee_id:int!
+Table attrs for table 'post'
+	*id:int
+	content:str
+	@user->id:int!
+Table attrs for table 'comment'
+	*id:int
+	content:str
+	@user->id:int!
+	@post->id:int!
+Table attrs for table 'like'
+	*id:int
+	@user->id:int!
+	money:str
+	#likeable
+Table attrs for table 'arson'
+	*id:int
+	@portfolio->id:int
+	text:str
+	@follower->id:int
+Table attrs for table 'todo'
+	*id:int
+	name:str
+	prio:int
+	completed:bool
+	@arson->id:int
+Schema Bytes
+CREATE TABLE IF NOT EXISTS "user" (
+	id SERIAL PRIMARY KEY,
+	fname VARCHAR(32) NOT NULL,
+	lname VARCHAR(32) NOT NULL,
+	email VARCHAR(100) NOT NULL CHECK (email ~* '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'),
+	gender BOOLEAN NOT NULL,
+	bio VARCHAR(300) NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "portfolio" (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	prio INTEGER NOT NULL,
+	completed BOOLEAN NOT NULL
+);
+CREATE TABLE IF NOT EXISTS "follower" (
+	id SERIAL PRIMARY KEY,
+	follower_id INTEGER NOT NULL,
+	followee_id INTEGER NOT NULL,
+	FOREIGN KEY (follower_id) REFERENCES "user"(id) ON DELETE CASCADE,
+	FOREIGN KEY (followee_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "post" (
+	id SERIAL PRIMARY KEY,
+	content VARCHAR(300) NOT NULL,
+	user_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "comment" (
+	id SERIAL PRIMARY KEY,
+	content VARCHAR(300) NOT NULL,
+	user_id INTEGER NOT NULL,
+	post_id INTEGER NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE,
+	FOREIGN KEY (post_id) REFERENCES "post"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "like" (
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER NOT NULL,
+	money VARCHAR(500) NOT NULL,
+	likeable_type VARCHAR(50) NOT NULL,
+	likeable_id INTEGER NOT NULL,
+	UNIQUE (likeable_id, likeable_type),
+	FOREIGN KEY (user_id) REFERENCES "user"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "arson" (
+	id SERIAL PRIMARY KEY,
+	portfolio_id INTEGER NOT NULL,
+	text VARCHAR(50) NOT NULL,
+	follower_id INTEGER NOT NULL,
+	FOREIGN KEY (portfolio_id) REFERENCES "portfolio"(id) ON DELETE CASCADE,
+	FOREIGN KEY (follower_id) REFERENCES "follower"(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS "todo" (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	prio INTEGER NOT NULL,
+	completed BOOLEAN NOT NULL,
+	arson_id INTEGER NOT NULL,
+	FOREIGN KEY (arson_id) REFERENCES "arson"(id) ON DELETE CASCADE
+);
+
+Schema being rewritten

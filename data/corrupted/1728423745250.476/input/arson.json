@@ -1,0 +1,8 @@
+{
+	"arson": {
+		"*id:int": {},
+		"@portfolio->id:int": {},
+		"text:str": {"limit": 50},
+		"@follower->id:int": {}
+	} 
+}

@@ -1,0 +1,8 @@
+Files to be considered for IR
+	./data/input/todo.json
+	./data/input/new_file.json
+	./data/input/portfolios.json
+	./data/input/user.json
+	./data/input/arson.json
+Dependency Graph
+{'todo': 'arson', 'follower': 'user', 'post': 'user', 'comment': 'user', 'like': 'user', 'arson': 'portfolio'}

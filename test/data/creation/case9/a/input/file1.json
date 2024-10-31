@@ -1,0 +1,7 @@
+{
+	"table1": {
+		"!id:int": {},
+		"name:str": {"limit": 100},
+		"cool:bool": {}
+	}
+}

@@ -1,0 +1,14 @@
+{
+    "table1": {
+        "!id:int": {}
+    },
+    "table2": {
+        "!id:int": {}
+    },
+    "table3": {
+        "!id:int": {}
+    },
+    "table4": {
+        "!id:int": {}
+    }
+}

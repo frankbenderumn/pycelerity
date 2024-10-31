@@ -1,0 +1,23 @@
+{
+    "id": "1000.0",
+    "path_index": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case4/sim/a/input/table1.json": [
+            "table1"
+        ]
+    },
+    "checksums": {
+        "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case4/sim/a/input/table1.json": "2c6ab307494f1023f58dc21d9fa7f292ada9b013355c1bdcaf0669d939939eb3"
+    },
+    "schools": [
+        "table1"
+    ],
+    "history": [],
+    "school_index": {
+        "table1": [
+            "/Users/josephbender/Desktop/programming/python/pycelerity/test/data/updation/case4/sim/a/input/table1.json"
+        ]
+    },
+    "school_checksums": {
+        "table1": "fc7fd68144d59bb93fc2b21d594d7c8819510e9cef0b38593dc658fc68a512c2"
+    }
+}

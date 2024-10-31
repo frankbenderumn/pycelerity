@@ -1,0 +1,5 @@
+{"okay": {
+	"*id:int": {},
+	"delta:str": {"limit": 100},
+	"delta2:str": {"limit": 100}
+}} 

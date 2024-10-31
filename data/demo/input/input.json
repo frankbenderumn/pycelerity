@@ -1,0 +1,13 @@
+{
+	"user": {
+		"!id:int": {},
+		"fname:str": {"limit": 100},
+		"lname:str": {"limit": 100},
+		"email:str": {"limit": 200, "regex": "email"},
+		"password_digest:str": {"limit": 256}
+	},
+	"post": {
+		"!id:int": {},
+		"content:str": {"limit": 100}
+	}
+}

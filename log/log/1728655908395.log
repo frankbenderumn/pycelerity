@@ -1,0 +1,14 @@
+Mock Timestamp
+mock_timestamp_a
+
+Files to be considered for IR
+	./test/data/updation/case2/a/input/school.json
+{'!id:int': {}, 'name:str': {'limit': 100}, 'attribute:int': {'default': 0}}
+{'!id:int': {}, 'name:str': {'limit': 100}, 'attribute:int': {'default': 0}}
+Dependency Graph
+	{}
+Sorted deps
+	[]
+School fishs for school '!id:int'
+School fishs for school 'attribute:int'
+	Raw Fish: default
